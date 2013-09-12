@@ -4,16 +4,16 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Pedidos
+    %title Ubiqua - Consola Administrativa - Clientes
   %body
     %header
       %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
-          %a{href:'/orders'}.active Pedidos
+          %a{href:'/orders'} Pedidos
         %li
-          %a{href:'/clients'} Clientes
+          %a{href:'/clients'}.active Clientes
         %li
           %a{href:'/salesmen'} Vendedores
         %li
@@ -23,22 +23,17 @@
         %li
           %a{href:'/products'} Productos
     #main-content
-      %h1 Pedidos
-      %input{type: 'search', name: 'order-search', results: 5, placeholder: 'Busca un pedido'}
+      %h1 Clientes
+      %a{href:'/clients/new'} Crear Cliente
+      %input{type: 'search', name: 'client-search', results: 5, placeholder: 'Busca un cliente'}
       %table
         %thead
-          %th Número de Pedido
-          %th Cliente
-          %th Vendedor
-          %th Fecha
-          %th Status
+          %tr
+            %th Nombre(Código)
+            %th Publicado
         %tbody
-          %td 78334
-          %td
-            Farmacia El Javillo
-            %span (1234567)
-          %td
-            Jorge Garcia
-            %span (7654321)
-          %td 25/08/2013
-          %td Confirmado
+          %tr
+            %td 
+              Farmacia El Javillo
+              %span (1234567)
+            %td &#x2713;
