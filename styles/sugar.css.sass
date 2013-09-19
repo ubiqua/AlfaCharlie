@@ -1,4 +1,33 @@
-//Structure
+/* Sugar */
+
+$main-color: #f16b23
+$header-height: 75px
+$nav-width: 200px
+
+// mixins
+
+@mixin ubiqua-scrollbar
+  &::-webkit-scrollbar
+    height: 16px
+    overflow: visible
+    width: 16px
+  &::-webkit-scrollbar-thumb
+    background-color: rgba(0, 0, 0, 0.2)
+    background-clip: padding-box
+    border: solid rgba(0, 0, 0, 0)
+    border-width: 1px 1px 1px 6px
+    min-height: 28px
+    padding: 100px 0 0
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),inset 0 -1px 0 rgba(0, 0, 0, 0.07)
+  &::-webkit-scrollbar-button
+    height: 0
+    width: 0
+  &::-webkit-scrollbar-track
+    background-clip: padding-box
+    border: solid rgba(0, 0, 0, 0)
+    border-width: 0 0 0 4px
+  &::-webkit-scrollbar-corner
+    background: rgba(0, 0, 0, 0)
 
 @mixin clearfix
   &:after
@@ -6,28 +35,58 @@
     content: ""
     display: table
 
+//Base Styles
+
+*, *:after, *:before
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
 body
+  color: #333
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 14px
+  line-height: 20px
+
+//Structure
+
+html
+  height: 100%
+
+body
+  height: 100%
   margin: 0
   overflow: hidden
   @include clearfix
 
 header
-  width: 100%
+  height: $header-height
 
 nav
   float: left
-  width: 20%
+  height: 100%
+  width: $nav-width
   
+#main-container
+  background-color: #fcfcfc
+  height: 100%
+  padding-left: $nav-width
+  padding-bottom: $header-height
+  width: 100%
+
 #main-content
-  float: right
+  height: 100%
   overflow: auto
-  width: 80%
+  @include ubiqua-scrollbar
 
 //Navigation
 
 header
   background-color: #fff
   border-bottom: 1px solid #eee 
+  .logo
+    height: 100%
+    padding: 15px 10px
 
 nav 
   background-color: #fff
@@ -36,18 +95,21 @@ nav
     list-style: none
     margin: 0
     padding: 0
+  li
+    border-bottom: 1px solid #eee
   a
     background-color: #fff
-    color: #777
+    color: #888
     display: block
-    font-size: 20px
-    padding: 15px
+    font-size: 18px
+    font-weight: bold
+    padding: 20px 15px
     text-decoration: none
     &:hover
       background-color: #f8f8f8
       color: #555
-  li.active
-    border-left: 5px solid #f16b23
+  .active
+    border-left: 5px solid $main-color
     a
       background-color: #f8f8f8
       color: #f16b23
