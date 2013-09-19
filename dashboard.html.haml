@@ -4,10 +4,11 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Resumen
+    %title Ubiqua - Consola Administrativa
+    %link{rel: "stylesheet", type: "text/css", href:"styles/sugar.css", media:"screen"}
   %body
     %header
-      %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
+      %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
@@ -22,16 +23,16 @@
           %a{href:'/brands'} Marcas 
         %li
           %a{href:'/products'} Productos
-    #main-content
-      %h1 Resumen
-      %span 5 pedidos detenidos
-      %span ultimo uso: 3:30pm
-      %span ultimo pedido enviado: 3:05pm
-      %h2 Totales
-      %span Pedidos: 100
-      %span Clientes: 30
-      %span Vendedores: 5
-      %span Supervisores: 2
-      %span Marcas: 11
-      %span Productos: 208
-
+    #main-container
+      #main-content
+        %h1 Resumen
+        %span 5 pedidos detenidos
+        %span ultimo uso: 3:30pm
+        %span ultimo pedido enviado: 3:05pm
+        %h2 Totales
+        %span Pedidos: 100
+        %span Clientes: 30
+        %span Vendedores: 5
+        %span Supervisores: 2
+        %span Marcas: 11
+        %span Productos: 208

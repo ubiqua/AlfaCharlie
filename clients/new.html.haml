@@ -4,16 +4,17 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Clientes - Nuevo
+    %title Ubiqua - Consola Administrativa
+    %link{rel: "stylesheet", type: "text/css", href:"styles/sugar.css", media:"screen"}
   %body
     %header
-      %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
+      %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
           %a{href:'/orders'} Pedidos
         %li
-          %a{href:'/clients'}.active Clientes
+          %a{href:'/clients'} Clientes
         %li
           %a{href:'/salesmen'} Vendedores
         %li
@@ -22,29 +23,30 @@
           %a{href:'/brands'} Marcas 
         %li
           %a{href:'/products'} Productos
-    #main-content
-      %h1 Cliente Nuevo
-      %a Crear
-      %a Cancelar
-      %span Publicado
-      %input{placeholder: 'Nombre'}
-      %input{placeholder: 'Codigo'}
-      %input{type: 'search', name: 'salesman-search', results: 5, placeholder: 'Busca un vendedor'}
-      %table
-        %thead
-          %tr
-            %th Vendedor(Código)
-            %th Asignado
-        %tbody
-          %tr
-            %td 
-              Jorge Garcia
-              %span (7654321)
-            %td
-              %a Asignar
-          %tr
-            %td 
-              Jose Varela
-              %span (7456312)
-            %td
-              %a Asignar
+    #main-container
+      #main-content
+        %h1 Cliente Nuevo
+        %a Crear
+        %a Cancelar
+        %span Publicado
+        %input{placeholder: 'Nombre'}
+        %input{placeholder: 'Codigo'}
+        %input{type: 'search', name: 'salesman-search', results: 5, placeholder: 'Busca un vendedor'}
+        %table
+          %thead
+            %tr
+              %th Vendedor(Código)
+              %th Asignado
+          %tbody
+            %tr
+              %td 
+                Jorge Garcia
+                %span (7654321)
+              %td
+                %a Asignar
+            %tr
+              %td 
+                Jose Varela
+                %span (7456312)
+              %td
+                %a Asignar

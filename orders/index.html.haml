@@ -4,14 +4,15 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Pedidos
+    %title Ubiqua - Consola Administrativa
+    %link{rel: "stylesheet", type: "text/css", href:"styles/sugar.css", media:"screen"}
   %body
     %header
-      %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
+      %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
-          %a{href:'/orders'}.active Pedidos
+          %a{href:'/orders'} Pedidos
         %li
           %a{href:'/clients'} Clientes
         %li
@@ -22,25 +23,26 @@
           %a{href:'/brands'} Marcas 
         %li
           %a{href:'/products'} Productos
-    #main-content
-      %h1 Pedidos
-      %input{type: 'search', name: 'order-search', results: 5, placeholder: 'Busca un pedido'}
-      %table
-        %thead
-          %tr
-            %th Número de Pedido
-            %th Cliente
-            %th Vendedor
-            %th Fecha
-            %th Status
-        %tbody
-          %tr
-            %td 78334
-            %td
-              Farmacia El Javillo
-              %span (1234567)
-            %td
-              Jorge Garcia
-              %span (7654321)
-            %td 25/08/2013
-            %td Confirmado
+    #main-container
+      #main-content
+        %h1 Pedidos
+        %input{type: 'search', name: 'order-search', results: 5, placeholder: 'Busca un pedido'}
+        %table
+          %thead
+            %tr
+              %th Número de Pedido
+              %th Cliente
+              %th Vendedor
+              %th Fecha
+              %th Status
+          %tbody
+            %tr
+              %td 78334
+              %td
+                Farmacia El Javillo
+                %span (1234567)
+              %td
+                Jorge Garcia
+                %span (7654321)
+              %td 25/08/2013
+              %td Confirmado

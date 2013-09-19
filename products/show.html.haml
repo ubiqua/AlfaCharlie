@@ -4,10 +4,11 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Vendedores - Jorge Garcia
+    %title Ubiqua - Consola Administrativa
+    %link{rel: "stylesheet", type: "text/css", href:"styles/sugar.css", media:"screen"}
   %body
     %header
-      %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
+      %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
@@ -21,63 +22,64 @@
         %li
           %a{href:'/brands'} Marcas 
         %li
-          %a{href:'/products'}.active Productos
-    #main-content
-      %h1 Gatorade de Uva
-      %a{href:'/salesmen/edit'} Editar
-      %span Gatorade
-      %span Publicado
-      .description
-        %h2 Descripcion
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      .photos
-        %h2 Fotos
-        %a Agregar Foto
-        %img{src:'images/dummy.png'}
-        %img{src:'images/dummy.png'}
-        %img{src:'images/dummy.png'}
-      .packages
-        %table
-          %thead
-            %tr
-              %th Caja de 15
-            %tr
-              %th GTRD-15-234
-          %tbody
-            %tr
-              %td Precio
-              %td $15.45
-            %tr
-              %td Código de Barra
-              %td 09837539
-            %tr
-              %td Inventario
-              %td 145
-            %tr
-              %td Bodega
-              %td WH-CF5
-            %tr
-              %td Tasa de Impuesto
-              %td 7%
-        %table
-          %thead
-            %tr
-              %th Unidad
-            %tr
-              %th GTRD-01-234
-          %tbody
-            %tr
-              %td Precio
-              %td $1.50
-            %tr
-              %td Código de Barra
-              %td 09737559
-            %tr
-              %td Inventario
-              %td 1175
-            %tr
-              %td Bodega
-              %td WH-CF6
-            %tr
-              %td Tasa de Impuesto
-              %td 7%
+          %a{href:'/products'} Productos
+    #main-container
+      #main-content
+        %h1 Gatorade de Uva
+        %a{href:'/salesmen/edit'} Editar
+        %span Gatorade
+        %span Publicado
+        .description
+          %h2 Descripcion
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .photos
+          %h2 Fotos
+          %a Agregar Foto
+          %img{src:'images/dummy.png'}
+          %img{src:'images/dummy.png'}
+          %img{src:'images/dummy.png'}
+        .packages
+          %table
+            %thead
+              %tr
+                %th Caja de 15
+              %tr
+                %th GTRD-15-234
+            %tbody
+              %tr
+                %td Precio
+                %td $15.45
+              %tr
+                %td Código de Barra
+                %td 09837539
+              %tr
+                %td Inventario
+                %td 145
+              %tr
+                %td Bodega
+                %td WH-CF5
+              %tr
+                %td Tasa de Impuesto
+                %td 7%
+          %table
+            %thead
+              %tr
+                %th Unidad
+              %tr
+                %th GTRD-01-234
+            %tbody
+              %tr
+                %td Precio
+                %td $1.50
+              %tr
+                %td Código de Barra
+                %td 09737559
+              %tr
+                %td Inventario
+                %td 1175
+              %tr
+                %td Bodega
+                %td WH-CF6
+              %tr
+                %td Tasa de Impuesto
+                %td 7%

@@ -4,10 +4,11 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Productos
+    %title Ubiqua - Consola Administrativa
+    %link{rel: "stylesheet", type: "text/css", href:"styles/sugar.css", media:"screen"}
   %body
     %header
-      %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
+      %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
@@ -21,19 +22,20 @@
         %li
           %a{href:'/brands'} Marcas 
         %li
-          %a{href:'/products'}.active Productos
-    #main-content
-      %h1 Productos
-      %a{href:'/products/new'} Crear Producto
-      %input{type: 'search', name: 'product-search', results: 5, placeholder: 'Busca un producto'}
-      %table
-        %thead
-          %tr
-            %th Nombre(Código)
-            %th Publicado
-        %tbody
-          %tr
-            %td 
-              Gatorade de Uva
-              %span (GTRD-445)
-            %td &#x2713;
+          %a{href:'/products'} Productos
+    #main-container
+      #main-content
+        %h1 Productos
+        %a{href:'/products/new'} Crear Producto
+        %input{type: 'search', name: 'product-search', results: 5, placeholder: 'Busca un producto'}
+        %table
+          %thead
+            %tr
+              %th Nombre(Código)
+              %th Publicado
+          %tbody
+            %tr
+              %td 
+                Gatorade de Uva
+                %span (GTRD-445)
+              %td &#x2713;

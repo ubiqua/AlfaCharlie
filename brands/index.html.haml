@@ -4,10 +4,11 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Marcas
+    %title Ubiqua - Consola Administrativa
+    %link{rel: "stylesheet", type: "text/css", href:"styles/sugar.css", media:"screen"}
   %body
     %header
-      %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
+      %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
@@ -19,19 +20,20 @@
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'}.active Marcas 
+          %a{href:'/brands'} Marcas 
         %li
           %a{href:'/products'} Productos
-    #main-content
-      %h1 Marcas
-      %a{href:'/brands/new'} Crear Marca
-      %input{type: 'search', name: 'brand-search', results: 5, placeholder: 'Busca una marca'}
-      %table
-        %thead
-          %tr
-            %th Marca
-            %th Publicada
-        %tbody
-          %tr
-            %td Gatorade
-            %td &#x2713;
+    #main-container
+      #main-content
+        %h1 Marcas
+        %a{href:'/brands/new'} Crear Marca
+        %input{type: 'search', name: 'brand-search', results: 5, placeholder: 'Busca una marca'}
+        %table
+          %thead
+            %tr
+              %th Marca
+              %th Publicada
+          %tbody
+            %tr
+              %td Gatorade
+              %td &#x2713;

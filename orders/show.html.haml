@@ -4,14 +4,15 @@
     %meta{charset: "utf-8"}
     %meta(http-equiv="X-UA-Compatible" content= "IE=Edge,chrome=1")
     %meta{name: "viewport", content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-    %title Ubiqua - Consola Administrativa - Pedidos - Pedido #78334
+    %title Ubiqua - Consola Administrativa
+    %link{rel: "stylesheet", type: "text/css", href:"styles/sugar.css", media:"screen"}
   %body
     %header
-      %img{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
+      %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
     %nav
       %ul
         %li
-          %a{href:'/orders'}.active Pedidos
+          %a{href:'/orders'} Pedidos
         %li
           %a{href:'/clients'} Clientes
         %li
@@ -22,51 +23,52 @@
           %a{href:'/brands'} Marcas 
         %li
           %a{href:'/products'} Productos
-    #main-content
-      %h1 Pedido #78334
-      %a Reenviar
-      %a Reenviar con otro ID
-      %a Borrar
-      %span Enviado
-      %span Fecha: 25/08/2013
-      %span Vendedor: Jorge Garcia
-      %span Cliente: Farmacia El Javillo
-      %table
-        %thead
-          %tr
-            %th Producto
-            %th Precio Unitario
-            %th Cantidad
-            %th Total
-        %tbody
-          %tr
-            %td
-              Gatorade de Uva
-              %span Código: GTRD-15-234
-              %span Código de Barra: 09837539
-              %span Caja de 15 
-            %td $15.45
-            %td 2
-            %td $30.90
-          %tr
-            %td
-              Gatorade de Naranja
-              %span Código: GTRD-15-239
-              %span Código de Barra: 09837540
-              %span Caja de 15 
-            %td $15.45
-            %td 2
-            %td $30.90
-        %tfoot
-          %tr
-            %td{colspan:'2'}
-            %td Subtotal
-            %td $61.80
-          %tr
-            %td{colspan:'2'}
-            %td Impuestos
-            %td $4.33
-          %tr
-            %td{colspan:'2'}
-            %td Total
-            %td $66.13
+    #main-container
+      #main-content
+        %h1 Pedido #78334
+        %a Reenviar
+        %a Reenviar con otro ID
+        %a Borrar
+        %span Enviado
+        %span Fecha: 25/08/2013
+        %span Vendedor: Jorge Garcia
+        %span Cliente: Farmacia El Javillo
+        %table
+          %thead
+            %tr
+              %th Producto
+              %th Precio Unitario
+              %th Cantidad
+              %th Total
+          %tbody
+            %tr
+              %td
+                Gatorade de Uva
+                %span Código: GTRD-15-234
+                %span Código de Barra: 09837539
+                %span Caja de 15 
+              %td $15.45
+              %td 2
+              %td $30.90
+            %tr
+              %td
+                Gatorade de Naranja
+                %span Código: GTRD-15-239
+                %span Código de Barra: 09837540
+                %span Caja de 15 
+              %td $15.45
+              %td 2
+              %td $30.90
+          %tfoot
+            %tr
+              %td{colspan:'2'}
+              %td Subtotal
+              %td $61.80
+            %tr
+              %td{colspan:'2'}
+              %td Impuestos
+              %td $4.33
+            %tr
+              %td{colspan:'2'}
+              %td Total
+              %td $66.13
