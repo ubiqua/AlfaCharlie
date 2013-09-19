@@ -1,0 +1,53 @@
+//Structure
+
+@mixin clearfix
+  &:after
+    clear: both
+    content: ""
+    display: table
+
+body
+  margin: 0
+  overflow: hidden
+  @include clearfix
+
+header
+  width: 100%
+
+nav
+  float: left
+  width: 20%
+  
+#main-content
+  float: right
+  overflow: auto
+  width: 80%
+
+//Navigation
+
+header
+  background-color: #fff
+  border-bottom: 1px solid #eee 
+
+nav 
+  background-color: #fff
+  border-right: 1px solid #eee 
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+  a
+    background-color: #fff
+    color: #777
+    display: block
+    font-size: 20px
+    padding: 15px
+    text-decoration: none
+    &:hover
+      background-color: #f8f8f8
+      color: #555
+  li.active
+    border-left: 5px solid #f16b23
+    a
+      background-color: #f8f8f8
+      color: #f16b23
