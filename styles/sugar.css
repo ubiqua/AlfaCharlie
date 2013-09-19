@@ -1,0 +1,95 @@
+/* Sugar */
+*, *:after, *:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  color: #333333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; }
+  body:after {
+    clear: both;
+    content: "";
+    display: table; }
+
+header {
+  height: 75px; }
+
+nav {
+  float: left;
+  height: 100%;
+  width: 200px; }
+
+#main-container {
+  background-color: #fcfcfc;
+  height: 100%;
+  padding-left: 200px;
+  padding-bottom: 75px;
+  width: 100%; }
+
+#main-content {
+  height: 100%;
+  overflow: auto; }
+  #main-content::-webkit-scrollbar {
+    height: 16px;
+    overflow: visible;
+    width: 16px; }
+  #main-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    border: solid rgba(0, 0, 0, 0);
+    border-width: 1px 1px 1px 6px;
+    min-height: 28px;
+    padding: 100px 0 0;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07); }
+  #main-content::-webkit-scrollbar-button {
+    height: 0;
+    width: 0; }
+  #main-content::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: solid rgba(0, 0, 0, 0);
+    border-width: 0 0 0 4px; }
+  #main-content::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0); }
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #eeeeee; }
+  header .logo {
+    height: 100%;
+    padding: 15px 10px; }
+
+nav {
+  background-color: white;
+  border-right: 1px solid #eeeeee; }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  nav li {
+    border-bottom: 1px solid #eeeeee; }
+  nav a {
+    background-color: white;
+    color: #888888;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 15px;
+    text-decoration: none; }
+    nav a:hover {
+      background-color: #f8f8f8;
+      color: #555555; }
+  nav .active a {
+    background-color: #f8f8f8;
+    border-left: 5px solid #f16b23;
+    color: #f16b23; }
