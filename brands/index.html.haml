@@ -9,7 +9,7 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
           %a{href:'/orders'} Pedidos
@@ -19,15 +19,17 @@
           %a{href:'/salesmen'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
-        %li
+        %li.active
           %a{href:'/brands'} Marcas 
         %li
           %a{href:'/products'} Productos
     #main-container
       #main-content
-        %h1 Marcas
-        %a{href:'/brands/new'} Crear Marca
-        %input{type: 'search', name: 'brand-search', results: 5, placeholder: 'Busca una marca'}
+        .heading
+          %h1 Marcas
+          .actions
+            %a.btn{href:'/brands/new'} Crear Marca
+        %input{type: 'search', name: 'brand-search', placeholder: 'Busca una marca'}
         %table
           %thead
             %tr
@@ -36,4 +38,28 @@
           %tbody
             %tr
               %td Gatorade
+              %td &#x2713;
+            %tr
+              %td Coca Cola
+              %td &#x2713;
+            %tr
+              %td Tropicana
+              %td &#x2713;
+            %tr
+              %td Gatorade
+              %td &#x2713;
+            %tr
+              %td Coca Cola
+              %td &#x2713;
+            %tr
+              %td Tropicana
+              %td &#x2713;
+            %tr
+              %td Gatorade
+              %td &#x2713;
+            %tr
+              %td Coca Cola
+              %td &#x2713;
+            %tr
+              %td Tropicana
               %td &#x2713;
