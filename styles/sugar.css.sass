@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6
 
 //Link
 a
-  color: #666
+  color: $main-color
   text-decoration: none
   transition: color linear 0.05s
   -webkit-transition: color linear 0.05s
@@ -301,7 +301,8 @@ table
 
   td, th
     border-top: 1px solid #DDD
-    padding: 14px 8px
+    line-height: 2
+    padding: 10px 8px
     text-align: left
     vertical-align: top
 
@@ -314,7 +315,91 @@ table
   thead:first-child tr:first-child th
     border-top: 0
 
-  @include table-hover
+// ON/OFF Switch
+.onoffswitch
+  position: relative
+  width: 60px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+
+.onoffswitch-checkbox
+  display: none
+
+.onoffswitch-label
+  display: block
+  overflow: hidden
+  cursor: pointer
+  border: 1px solid #DFDFDF
+  border-radius: 2px
+
+.onoffswitch-inner
+  width: 200%
+  margin-left: -100%
+  -moz-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  -webkit-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  -o-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  &:before, &:after
+    float: left
+    width: 50%
+    height: 30px
+    padding: 0
+    line-height: 30px
+    font-size: 19px
+    color: #fff
+    font-weight: bold
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+    -moz-transition: background linear 0.15s, border linear 0.15s
+    -webkit-transition: background linear 0.15s, border linear 0.15s
+    -o-transition: background linear 0.15s, border linear 0.15s
+    transition: background linear 0.15s, border linear 0.15s
+  &:before
+    content: "✓"
+    padding-left: 10px
+    background-color: #5CB85C
+    color: #FFFFFF
+  &:after
+    content: "×"
+    padding-right: 10px
+    background-color: #D9534F
+    color: #FFFFFF
+    text-align: right
+
+.onoffswitch-switch
+  width: 20px
+  margin: 0px
+  background: #f4f4f4
+  border: 1px solid #DFDFDF
+  border-radius: 2px
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 40px
+  -moz-transition: all 0.3s ease-in 0s
+  -webkit-transition: all 0.3s ease-in 0s
+  -o-transition: all 0.3s ease-in 0s
+  transition: all 0.3s ease-in 0s
+
+.onoffswitch:hover
+  .onoffwitch-label
+    border-color: #ccc
+  .onoffswitch-switch
+    background-color: #efefef
+    border-color: #ccc
+  .onoffswitch-inner
+    &:before
+      background-color: #47A447
+    &:after
+      background-color: #D2322D
+
+.onoffswitch-checkbox:checked + .onoffswitch-label
+  .onoffswitch-inner
+    margin-left: 0
+  .onoffswitch-switch
+    right: 0px
 
 //View headings
 .heading
@@ -328,3 +413,20 @@ table
   .actions
     text-align: right
 
+//Indexes
+table.index
+  @include table-hover
+
+  td a
+    color: #666
+    &:hover
+      color: $main-color
+
+  td.name .db_ref
+    color: #aaa
+  
+  td.published, th.published
+    text-align: right
+    .onoffswitch
+      float: right
+      text-align: left
