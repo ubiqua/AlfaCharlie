@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
 a {
-  color: #888888;
+  color: #f16b23;
   text-decoration: none;
   transition: color linear 0.05s;
   -webkit-transition: color linear 0.05s;
@@ -268,12 +268,6 @@ table {
     vertical-align: bottom; }
   table thead:first-child tr:first-child th {
     border-top: 0; }
-  table td, table th {
-    transition: background linear 0.05s;
-    -webkit-transition: background linear 0.05s;
-    -moz-transition: background linear 0.05s; }
-  table tbody > tr:hover > td, table tbody > tr:hover > th {
-    background-color: whitesmoke; }
 
 .onoffswitch {
   position: relative;
@@ -365,3 +359,19 @@ table {
     margin: 5px 0px; }
   .heading .actions {
     text-align: right; }
+
+table.index td, table.index th {
+  transition: background linear 0.05s;
+  -webkit-transition: background linear 0.05s;
+  -moz-transition: background linear 0.05s; }
+table.index tbody > tr:hover > td, table.index tbody > tr:hover > th {
+  background-color: whitesmoke; }
+table.index td a {
+  color: #888888; }
+  table.index td a:hover {
+    color: #f16b23; }
+table.index td.published, table.index th.published {
+  text-align: right; }
+  table.index td.published .onoffswitch, table.index th.published .onoffswitch {
+    float: right;
+    text-align: left; }
