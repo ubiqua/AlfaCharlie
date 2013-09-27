@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Sugar */
 *, *:after, *:before {
   -moz-box-sizing: border-box;
@@ -8,7 +9,7 @@ body {
   color: #444444;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 20px; }
+  line-height: 1.5; }
 
 html {
   height: 100%; }
@@ -155,6 +156,15 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   margin: 0; }
 
+a {
+  color: #888888;
+  text-decoration: none;
+  transition: color linear 0.05s;
+  -webkit-transition: color linear 0.05s;
+  -moz-transition: color linear 0.05s; }
+  a:hover {
+    color: #f16b23; }
+
 input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="text"], input[type="search"], textarea, input[type="url"], input[type="search"] {
   background-color: white;
   border: 1px solid #cccccc;
@@ -247,7 +257,8 @@ table {
   width: 100%; }
   table td, table th {
     border-top: 1px solid #dddddd;
-    padding: 16px 8px;
+    line-height: 2;
+    padding: 10px 8px;
     text-align: left;
     vertical-align: top; }
   table th {
@@ -257,8 +268,94 @@ table {
     vertical-align: bottom; }
   table thead:first-child tr:first-child th {
     border-top: 0; }
-  table tbody tr:nth-child(odd) > td, table tbody tr:nth-child(odd) > th {
-    background-color: #f9f9f9; }
+  table td, table th {
+    transition: background linear 0.05s;
+    -webkit-transition: background linear 0.05s;
+    -moz-transition: background linear 0.05s; }
+  table tbody > tr:hover > td, table tbody > tr:hover > th {
+    background-color: whitesmoke; }
+
+.onoffswitch {
+  position: relative;
+  width: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
+.onoffswitch-checkbox {
+  display: none; }
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px; }
+
+.onoffswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s;
+  -webkit-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s;
+  -o-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s;
+  transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s; }
+  .onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 19px;
+    color: white;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: background linear 0.15s, border linear 0.15s;
+    -webkit-transition: background linear 0.15s, border linear 0.15s;
+    -o-transition: background linear 0.15s, border linear 0.15s;
+    transition: background linear 0.15s, border linear 0.15s; }
+  .onoffswitch-inner:before {
+    content: "✓";
+    padding-left: 10px;
+    background-color: #5cb85c;
+    color: white; }
+  .onoffswitch-inner:after {
+    content: "✗";
+    padding-right: 10px;
+    background-color: #d9534f;
+    color: white;
+    text-align: right; }
+
+.onoffswitch-switch {
+  width: 20px;
+  margin: 0px;
+  background: #f4f4f4;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  -moz-transition: all 0.3s ease-in 0s;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s; }
+
+.onoffswitch:hover .onoffwitch-label {
+  border-color: #cccccc; }
+.onoffswitch:hover .onoffswitch-switch {
+  background-color: #efefef;
+  border-color: #cccccc; }
+.onoffswitch:hover .onoffswitch-inner:before {
+  background-color: #47a447; }
+.onoffswitch:hover .onoffswitch-inner:after {
+  background-color: #d2322d; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0; }
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px; }
 
 .heading {
   margin-bottom: 20px; }
