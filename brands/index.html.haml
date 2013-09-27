@@ -30,62 +30,36 @@
           .actions
             %a.btn{href:'/brands/new'} Crear Marca
         %input{type: 'search', name: 'brand-search', placeholder: 'Busca una marca'}
-        %table
+        %table.brands.index
           %thead
             %tr
-              %th Marca
-              %th Publicada
+              %th.name Marca
+              %th.published Publicada
           %tbody
             %tr
-              %td 
+              %td.name 
                 %a{href: "#"} Gatorade
-              %td
+              %td.published
                 .onoffswitch
-                  %input#myonoffswitch.onoffswitch-checkbox{checked: "checked", name: "onoffswitch", type: "checkbox"}
-                  %label.onoffswitch-label{for: "myonoffswitch"}
+                  %input#gatorade-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "gatorade-publish-switch"}
                     .onoffswitch-inner
                     .onoffswitch-switch
             %tr
-              %td 
+              %td.name 
                 %a{href: "#"} Coca Cola
-              %td &#x2713;
+              %td.published
+                .onoffswitch
+                  %input#coca-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "coca-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
             %tr
-              %td 
+              %td.name
                 %a{href: "#"} Tropicana
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Gatorade
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Coca Cola
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Tropicana
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Gatorade
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Coca Cola
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Tropicana
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Gatorade
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Coca Cola
-              %td &#x2713;
-            %tr
-              %td 
-                %a{href: "#"} Tropicana
-              %td &#x2713;
+              %td.published
+                .onoffswitch
+                  %input#tropicana-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "tropicana-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
