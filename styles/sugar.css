@@ -108,7 +108,7 @@ header {
     border-left: 5px solid #f16b23;
     color: #f16b23; }
 
-@media all and (max-width: 768px) {
+@media (max-width: 768px) {
   #main-nav {
     overflow: hidden;
     width: 0; }
@@ -315,14 +315,14 @@ table {
     background-color: #5cb85c;
     color: white; }
   .onoffswitch-inner:after {
-    content: "✗";
-    padding-right: 10px;
+    content: "×";
+    padding-right: 11px;
     background-color: #d9534f;
     color: white;
     text-align: right; }
 
 .onoffswitch-switch {
-  width: 20px;
+  width: 25px;
   margin: 0px;
   background: #f4f4f4;
   border: 1px solid #dfdfdf;
@@ -330,7 +330,7 @@ table {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 40px;
+  right: 35px;
   -moz-transition: all 0.3s ease-in 0s;
   -webkit-transition: all 0.3s ease-in 0s;
   -o-transition: all 0.3s ease-in 0s;
@@ -367,11 +367,21 @@ table.index td, table.index th {
 table.index tbody > tr:hover > td, table.index tbody > tr:hover > th {
   background-color: whitesmoke; }
 table.index td a {
-  color: #888888; }
+  color: #666666; }
   table.index td a:hover {
     color: #f16b23; }
+table.index td .db-ref {
+  color: #aaaaaa; }
 table.index td.published, table.index th.published {
   text-align: right; }
   table.index td.published .onoffswitch, table.index th.published .onoffswitch {
     float: right;
     text-align: left; }
+
+@media (max-width: 768px) {
+  .orders.index th.order-number:after {
+    content: "#"; }
+  .orders.index th.order-number span {
+    display: none; }
+  .orders.index td .db-ref {
+    display: block; } }
