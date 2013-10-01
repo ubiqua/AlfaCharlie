@@ -57,6 +57,8 @@ body
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   font-size: 16px
   line-height: 1.5
+  @include device(phone)
+    font-size: 14px
 
 //Structure
 
@@ -313,12 +315,16 @@ table
     padding: 10px 8px
     text-align: left
     vertical-align: top
+    @include device(phone)
+      padding: 8px 5px
 
   th
     border-bottom: 2px solid #DDD
     font-size: 14px
     text-transform: uppercase
     vertical-align: bottom
+    @include device(phone)
+      font-size: 12px
 
   thead:first-child tr:first-child th
     border-top: 0

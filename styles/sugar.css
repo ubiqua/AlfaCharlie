@@ -246,7 +246,6 @@ textarea {
   border-color: #d43f3a;
   color: white; }
   .btn-danger:hover {
-    background-color: #d2322d;
     border-color: #ac2925;
     color: white; }
 
@@ -268,6 +267,31 @@ table {
     vertical-align: bottom; }
   table thead:first-child tr:first-child th {
     border-top: 0; }
+
+.label, .label-green, .orders.index .label.verified, .label-red, .orders.index .label.unsent, .label-yellow, .orders.index .label.sent {
+  background-color: #efefef;
+  border-radius: 2px;
+  color: #444444;
+  display: inline;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.2em 0.6em 0.3em;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline; }
+
+.label-green, .orders.index .label.verified, .orders.index .verified.label-green, .orders.index .verified.label-red, .orders.index .verified.label.unsent, .orders.index .verified.label-yellow, .orders.index .verified.label.sent {
+  background-color: #5cb85c;
+  color: white; }
+
+.label-red, .orders.index .label.unsent, .orders.index .unsent.label-green, .orders.index .unsent.label.verified, .orders.index .unsent.label-red, .orders.index .unsent.label-yellow, .orders.index .unsent.label.sent {
+  background-color: #d9534f;
+  color: white; }
+
+.label-yellow, .orders.index .label.sent, .orders.index .sent.label-green, .orders.index .sent.label.verified, .orders.index .sent.label-red, .orders.index .sent.label.unsent, .orders.index .sent.label-yellow {
+  background-color: #f0ad4e;
+  color: white; }
 
 .onoffswitch {
   position: relative;
@@ -385,3 +409,16 @@ table.index td.published, table.index th.published {
     display: none; }
   .orders.index td .db-ref {
     display: block; } }
+@media (max-width: 480px) {
+  .orders.index th.status {
+    max-width: 72px;
+    text-align: center; }
+  .orders.index td.status {
+    text-align: center; }
+  .orders.index .label, .orders.index .label-green, .orders.index .label.verified, .orders.index .label-red, .orders.index .label.unsent, .orders.index .label-yellow, .orders.index .label.sent {
+    border-radius: 15px;
+    display: inline-block;
+    min-height: 15px;
+    min-width: 15px; }
+    .orders.index .label span, .orders.index .label-green span, .orders.index .label.verified span, .orders.index .label-red span, .orders.index .label.unsent span, .orders.index .label-yellow span, .orders.index .label.sent span {
+      display: none; } }
