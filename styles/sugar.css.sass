@@ -44,6 +44,9 @@ $tablet-screen-width: 768px
   @else if $device == phone
     @media (max-width: $phone-screen-width)
       @content
+  @else if $device == desktop
+    @media (min-width: $tablet-screen-width)
+      @content
 
 //Base Styles
 
@@ -448,6 +451,7 @@ table
 .heading
   margin-bottom: 20px
   @extend .grid
+  @include clearfix
   h1, .actions
     float: left
     @extend .col-1-2
@@ -455,6 +459,32 @@ table
     margin: 5px 0px
   .actions
     text-align: right
+
+//Published Switch
+h1 .published
+  display: inline-block
+  margin-bottom: -5px
+  margin-left: 5px
+
+.published
+  @include device(desktop)
+    .onoffswitch
+      width: 110px
+
+    .onoffswitch-inner:before, .onoffswitch-inner:after
+      font-size: 10px 
+      text-transform: uppercase
+
+    .onoffswitch-inner:before
+      content: "Publicado"
+      padding-left: 12px
+      
+    .onoffswitch-inner:after
+      content: "No Publicado"
+      padding-right: 4px
+
+    .onoffswitch-switch
+      right: 85px
 
 //Indexes
 table.index

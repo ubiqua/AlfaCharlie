@@ -10,6 +10,9 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5; }
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px; } }
 
 html {
   height: 100%; }
@@ -260,11 +263,17 @@ table {
     padding: 10px 8px;
     text-align: left;
     vertical-align: top; }
+    @media (max-width: 480px) {
+      table td, table th {
+        padding: 8px 5px; } }
   table th {
     border-bottom: 2px solid #dddddd;
     font-size: 14px;
     text-transform: uppercase;
     vertical-align: bottom; }
+    @media (max-width: 480px) {
+      table th {
+        font-size: 12px; } }
   table thead:first-child tr:first-child th {
     border-top: 0; }
 
@@ -377,6 +386,10 @@ table {
 
 .heading {
   margin-bottom: 20px; }
+  .heading:after {
+    clear: both;
+    content: "";
+    display: table; }
   .heading h1, .heading .actions {
     float: left; }
   .heading h1 {
@@ -384,23 +397,45 @@ table {
   .heading .actions {
     text-align: right; }
 
-table.index td, table.index th {
-  transition: background linear 0.05s;
-  -webkit-transition: background linear 0.05s;
-  -moz-transition: background linear 0.05s; }
-table.index tbody > tr:hover > td, table.index tbody > tr:hover > th {
-  background-color: whitesmoke; }
-table.index td a {
-  color: #666666; }
-  table.index td a:hover {
-    color: #f16b23; }
-table.index td .db-ref {
-  color: #aaaaaa; }
-table.index td.published, table.index th.published {
-  text-align: right; }
-  table.index td.published .onoffswitch, table.index th.published .onoffswitch {
-    float: right;
-    text-align: left; }
+h1 .published {
+  display: inline-block;
+  margin-bottom: -5px;
+  margin-left: 10px; }
+
+@media (min-width: 768px) {
+  .published .onoffswitch {
+    width: 110px; }
+  .published .onoffswitch-inner:before, .published .onoffswitch-inner:after {
+    font-size: 10px;
+    text-transform: uppercase; }
+  .published .onoffswitch-inner:before {
+    content: "Publicado";
+    padding-left: 12px; }
+  .published .onoffswitch-inner:after {
+    content: "No Publicado";
+    padding-right: 4px; }
+  .published .onoffswitch-switch {
+    right: 85px; } }
+
+table.index {
+  margin-top: 10px; }
+  table.index td, table.index th {
+    transition: background linear 0.05s;
+    -webkit-transition: background linear 0.05s;
+    -moz-transition: background linear 0.05s; }
+  table.index tbody > tr:hover > td, table.index tbody > tr:hover > th {
+    background-color: whitesmoke; }
+  table.index td a {
+    color: #666666; }
+    table.index td a:hover {
+      color: #f16b23; }
+  table.index td .db-ref {
+    color: #aaaaaa; }
+  table.index td.published, table.index th.published {
+    text-align: right; }
+    table.index td.published .onoffswitch, table.index th.published .onoffswitch {
+      float: right;
+      text-align: left; }
 
 @media (max-width: 768px) {
   .orders.index th.order-number:after {
@@ -410,6 +445,8 @@ table.index td.published, table.index th.published {
   .orders.index td .db-ref {
     display: block; } }
 @media (max-width: 480px) {
+  .orders.index th.salesman, .orders.index td.salesman {
+    display: none; }
   .orders.index th.status {
     max-width: 72px;
     text-align: center; }
