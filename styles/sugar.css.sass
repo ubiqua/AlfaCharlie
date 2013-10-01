@@ -3,6 +3,7 @@
 $main-color: #f16b23
 $header-height: 75px
 $nav-width: 200px
+$phone-screen-width: 480px
 $tablet-screen-width: 768px
 
 // mixins
@@ -39,6 +40,9 @@ $tablet-screen-width: 768px
 @mixin device($device)
   @if $device == tablet
     @media (max-width: $tablet-screen-width)
+      @content
+  @else if $device == phone
+    @media (max-width: $phone-screen-width)
       @content
 
 //Base Styles
@@ -280,7 +284,6 @@ textarea
   border-color: #D43F3A
   color: white
   &:hover
-    background-color: #D2322D
     border-color: #AC2925 
     color: white
 
@@ -319,6 +322,35 @@ table
 
   thead:first-child tr:first-child th
     border-top: 0
+
+//Labels
+.label
+  background-color: #efefef
+  border-radius: 2px
+  color: #444
+  display: inline
+  font-size: 75%
+  font-weight: bold
+  line-height: 1
+  padding: .2em .6em .3em
+  text-align: center
+  white-space: nowrap
+  vertical-align: baseline
+
+.label-green
+  @extend .label
+  background-color: #5CB85C 
+  color: #FFF
+
+.label-red
+  @extend .label
+  background-color: #D9534F 
+  color: #FFF
+
+.label-yellow
+  @extend .label
+  background-color: #F0AD4E 
+  color: #FFF
 
 // ON/OFF Switch
 .onoffswitch
@@ -446,4 +478,29 @@ table.index
         display: none
     td .db-ref
       display: block
+
+  @include device(phone)
+    th.status
+      max-width: 72px
+      text-align: center
+
+    td.status
+      text-align: center
+
+    .label 
+      border-radius: 15px
+      display: inline-block
+      min-height: 15px
+      min-width: 15px
+      span
+        display: none
+  
+  .label.sent
+    @extend .label-yellow
+
+  .label.unsent
+    @extend .label-red
+
+  .label.verified
+    @extend .label-green
 
