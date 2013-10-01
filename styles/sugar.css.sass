@@ -437,9 +437,13 @@ table.index
       text-align: left
 
 //Orders
-.orders.index th.order-number
+.orders.index 
   @include device(tablet)
-    &:after
-      content: "#"
-    span
-      display: none
+    th.order-number
+      &:after
+        content: "#"
+      span
+        display: none
+    td .db-ref
+      display: block
+
