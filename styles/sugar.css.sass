@@ -3,6 +3,7 @@
 $main-color: #f16b23
 $header-height: 75px
 $nav-width: 200px
+$tablet-screen-width: 768px
 
 // mixins
 
@@ -35,6 +36,11 @@ $nav-width: 200px
     content: ""
     display: table
 
+@mixin device($device)
+  @if $device == tablet
+    @media (max-width: $tablet-screen-width)
+      @content
+
 //Base Styles
 
 *, *:after, *:before
@@ -61,7 +67,6 @@ body
 
 header
   height: $header-height
-
 #main-nav
   float: left
   height: 100%
@@ -145,7 +150,7 @@ header
     border-left: 5px solid $main-color
     color: #f16b23
 
-@media all and (max-width: 768px)
+@include device(tablet)
   #main-nav
     overflow: hidden
     width: 0
@@ -422,7 +427,7 @@ table.index
     &:hover
       color: $main-color
 
-  td .db_ref
+  td .db-ref
     color: #aaa
   
   td.published, th.published
@@ -430,3 +435,11 @@ table.index
     .onoffswitch
       float: right
       text-align: left
+
+//Orders
+.orders.index th.order-number
+  @include device(tablet)
+    &:after
+      content: "#"
+    span
+      display: none
