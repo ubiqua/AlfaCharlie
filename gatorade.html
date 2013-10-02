@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+    <title>Ubiqua - Consola Administrativa</title>
+    <link href='styles/sugar.css' media='screen' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <img alt='ubiqua' class='logo' src='images/ubiqua-logo.png'>
+    </header>
+    <nav id='main-nav'>
+      <ul>
+        <li>
+          <a href='orders.html'>Pedidos</a>
+        </li>
+        <li>
+          <a href='clients.html'>Clientes</a>
+        </li>
+        <li>
+          <a href='salesmen.html'>Vendedores</a>
+        </li>
+        <li>
+          <a href='/supervisors'>Supervisores</a>
+        </li>
+        <li>
+          <a href='brands.html'>Marcas</a>
+        </li>
+        <li>
+          <a href='products.html'>Productos</a>
+        </li>
+      </ul>
+    </nav>
+    <div id='main-container'>
+      <div id='main-content'>
+        <div class='heading'>
+          <h1>
+            Gatorade
+            <div class='published'>
+              <div class='onoffswitch'>
+                <input checked='checked' class='onoffswitch-checkbox' id='gatorade-publish-switch' name='publish-switch' type='checkbox'>
+                <label class='onoffswitch-label' for='gatorade-publish-switch'>
+                  <div class='onoffswitch-inner'></div>
+                  <div class='onoffswitch-switch'></div>
+                </label>
+              </div>
+            </div>
+          </h1>
+          <div class='actions'>
+            <a class='btn' href='/products/new'>Crear Producto</a>
+          </div>
+        </div>
+        <input name='product-search' placeholder='Busca un producto' type='search'>
+        <table class='products index'>
+          <thead>
+            <tr>
+              <th class='name'>Nombre (Código)</th>
+              <th class='published'>Publicado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='name'>
+                <a href='#'>
+                  Gatorade de Fresa
+                  <span class='db-ref'>(GTRD-545)</span>
+                </a>
+              </td>
+              <td class='published'>
+                <div class='onoffswitch'>
+                  <input checked='checked' class='onoffswitch-checkbox' id='gatorade-fresa-publish-switch' name='publish-switch' type='checkbox'>
+                  <label class='onoffswitch-label' for='gatorade-fresa-publish-switch'>
+                    <div class='onoffswitch-inner'></div>
+                    <div class='onoffswitch-switch'></div>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class='name'>
+                <a href='#'>
+                  Gatorade de Uva
+                  <span class='db-ref'>(GTRD-445)</span>
+                </a>
+              </td>
+              <td class='published'>
+                <div class='onoffswitch'>
+                  <input checked='checked' class='onoffswitch-checkbox' id='gatorade-uva-publish-switch' name='publish-switch' type='checkbox'>
+                  <label class='onoffswitch-label' for='gatorade-uva-publish-switch'>
+                    <div class='onoffswitch-inner'></div>
+                    <div class='onoffswitch-switch'></div>
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

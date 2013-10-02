@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+    <title>Ubiqua - Consola Administrativa</title>
+    <link href='styles/sugar.css' media='screen' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <img alt='ubiqua' class='logo' src='images/ubiqua-logo.png'>
+    </header>
+    <nav id='main-nav'>
+      <ul>
+        <li>
+          <a href='orders.html'>Pedidos</a>
+        </li>
+        <li>
+          <a href='clients.html'>Clientes</a>
+        </li>
+        <li>
+          <a href='salesmen.html'>Vendedores</a>
+        </li>
+        <li>
+          <a href='/supervisors'>Supervisores</a>
+        </li>
+        <li>
+          <a href='brands.html'>Marcas</a>
+        </li>
+        <li>
+          <a href='products.html'>Productos</a>
+        </li>
+      </ul>
+    </nav>
+    <div id='main-container'>
+      <div id='main-content'>
+        <div class='heading'>
+          <h1>
+            Jorge Garcia
+            <div class='published'>
+              <div class='onoffswitch'>
+                <input checked='checked' class='onoffswitch-checkbox' id='jorge-publish-switch' name='jorge-switch' type='checkbox'>
+                <label class='onoffswitch-label' for='gatorade-publish-switch'>
+                  <div class='onoffswitch-inner'></div>
+                  <div class='onoffswitch-switch'></div>
+                </label>
+              </div>
+            </div>
+          </h1>
+          <div class='actions'>
+            <a class='btn' href='/salesmen/edit'>Editar</a>
+            <a class='btn-danger' href='#'>Borrar</a>
+          </div>
+          <span>
+            Código:
+            <strong>7654321</strong>
+          </span>
+          <span>
+            Correo Electronico:
+            <strong>jgarcia@ubiqua.me</strong>
+          </span>
+          <span>
+            Correo de Facturacion:
+            <strong>facturador1@ubiqua.me</strong>
+          </span>
+          <span>
+            Última Actividad:
+            <strong>29/08/2013</strong>
+          </span>
+        </div>
+        <input name='client-search' placeholder='Busca un cliente' type='search'>
+        <table class='salesman clients index'>
+          <thead>
+            <tr>
+              <th class='name'>Cliente (Código)</th>
+              <th class='assigned'>Asignado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='name'>
+                <a href='javillo.html'>
+                  Farmacia El Javillo
+                  <span class='db-ref'>(1234567)</span>
+                </a>
+              </td>
+              <td class='assigned'>
+                <div class='onoffswitch'>
+                  <input checked='checked' class='onoffswitch-checkbox' id='javillo-assign-switch' name='assign-switch' type='checkbox'>
+                  <label class='onoffswitch-label' for='javillo-assign-switch'>
+                    <div class='onoffswitch-inner'></div>
+                    <div class='onoffswitch-switch'></div>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class='name'>
+                <a href='#'>
+                  Super 99
+                  <span class='db-ref'>(1325476)</span>
+                </a>
+              </td>
+              <td class='assigned'>
+                <div class='onoffswitch'>
+                  <input checked='checked' class='onoffswitch-checkbox' id='super99-assign-switch' name='assign-switch' type='checkbox'>
+                  <label class='onoffswitch-label' for='super99-assign-switch'>
+                    <div class='onoffswitch-inner'></div>
+                    <div class='onoffswitch-switch'></div>
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

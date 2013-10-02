@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+    <title>Ubiqua - Consola Administrativa</title>
+    <link href='styles/sugar.css' media='screen' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <img alt='ubiqua' class='logo' src='images/ubiqua-logo.png'>
+    </header>
+    <nav id='main-nav'>
+      <ul>
+        <li>
+          <a href='orders.html'>Pedidos</a>
+        </li>
+        <li>
+          <a href='clients.html'>Clientes</a>
+        </li>
+        <li>
+          <a href='salesmen.html'>Vendedores</a>
+        </li>
+        <li>
+          <a href='/supervisors'>Supervisores</a>
+        </li>
+        <li>
+          <a href='brands.html'>Marcas</a>
+        </li>
+        <li>
+          <a href='products.html'>Productos</a>
+        </li>
+      </ul>
+    </nav>
+    <div id='main-container'>
+      <div id='main-content'>
+        <div class='heading'>
+          <h1>
+            Pedido #78334
+            <span class='label sent'>Enviado</span>
+          </h1>
+          <div class='actions'>
+            <a class='btn'>Reenviar</a>
+            <a class='btn'>Reenviar con otro ID</a>
+            <a class='btn-danger'>Borrar</a>
+          </div>
+          <span>
+            Fecha:
+            <strong>25/08/2013</strong>
+          </span>
+          <span>
+            Vendedor:
+            <strong>
+              <a href='jorge.html'>Jorge Garcia</a>
+            </strong>
+          </span>
+          <span>
+            Cliente:
+            <strong>
+              <a href='javillo.html'>Farmacia El Javillo</a>
+            </strong>
+          </span>
+        </div>
+        <table class='index order'>
+          <thead>
+            <tr>
+              <th class='product'>Producto</th>
+              <th>Precio Unitario</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='product'>
+                <a href='gatorade-uva.html'>
+                  Gatorade de Uva
+                </a>
+                <span>Código: GTRD-15-234</span>
+                <span>Código de Barra: 09837539</span>
+                <span>Caja de 15</span>
+              </td>
+              <td>$15.45</td>
+              <td>2</td>
+              <td>$30.90</td>
+            </tr>
+            <tr>
+              <td class='product'>
+                <a href='#'>
+                  Gatorade de Naranja
+                </a>
+                <span>Código: GTRD-15-239</span>
+                <span>Código de Barra: 09837540</span>
+                <span>Caja de 15</span>
+              </td>
+              <td>$15.45</td>
+              <td>2</td>
+              <td>$30.90</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class='subtotal'>
+              <td colspan='2'></td>
+              <td>Subtotal</td>
+              <td>$61.80</td>
+            </tr>
+            <tr class='tax'>
+              <td colspan='2'></td>
+              <td>Impuestos</td>
+              <td>$4.33</td>
+            </tr>
+            <tr class='total'>
+              <td colspan='2'></td>
+              <td>Total</td>
+              <td>$66.13</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

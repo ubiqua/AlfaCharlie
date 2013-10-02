@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+    <title>Ubiqua - Consola Administrativa</title>
+    <link href='styles/sugar.css' media='screen' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <img alt='ubiqua' class='logo' src='images/ubiqua-logo.png'>
+    </header>
+    <nav id='main-nav'>
+      <ul>
+        <li>
+          <a href='orders.html'>Pedidos</a>
+        </li>
+        <li class='active'>
+          <a href='clients.html'>Clientes</a>
+        </li>
+        <li>
+          <a href='salesmen.html'>Vendedores</a>
+        </li>
+        <li>
+          <a href='/supervisors'>Supervisores</a>
+        </li>
+        <li>
+          <a href='brands.html'>Marcas</a>
+        </li>
+        <li>
+          <a href='products.html'>Productos</a>
+        </li>
+      </ul>
+    </nav>
+    <div id='main-container'>
+      <div id='main-content'>
+        <div class='heading'>
+          <h1>Clientes</h1>
+          <div class='actions'>
+            <a class='btn' href='/clients/new'>Crear Cliente</a>
+          </div>
+        </div>
+        <input name='client-search' placeholder='Busca un cliente' type='search'>
+        <table class='clients index'>
+          <thead>
+            <tr>
+              <th class='name'>Nombre (Código)</th>
+              <th class='published'>Publicado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='name'>
+                <a href='javillo.html'>
+                  Farmacia El Javillo
+                  <span class='db-ref'>(1234567)</span>
+                </a>
+              </td>
+              <td class='published'>
+                <div class='onoffswitch'>
+                  <input checked='checked' class='onoffswitch-checkbox' id='javillo-publish-switch' name='publish-switch' type='checkbox'>
+                  <label class='onoffswitch-label' for='javillo-publish-switch'>
+                    <div class='onoffswitch-inner'></div>
+                    <div class='onoffswitch-switch'></div>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class='name'>
+                <a href='#'>
+                  Supermercado El Rey
+                  <span class='db-ref'>(7865831)</span>
+                </a>
+              </td>
+              <td class='published'>
+                <div class='onoffswitch'>
+                  <input checked='checked' class='onoffswitch-checkbox' id='rey-publish-switch' name='publish-switch' type='checkbox'>
+                  <label class='onoffswitch-label' for='rey-publish-switch'>
+                    <div class='onoffswitch-inner'></div>
+                    <div class='onoffswitch-switch'></div>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class='name'>
+                <a href='#'>
+                  Importadora Ricamar
+                  <span class='db-ref'>(6583107)</span>
+                </a>
+              </td>
+              <td class='published'>
+                <div class='onoffswitch'>
+                  <input checked='checked' class='onoffswitch-checkbox' id='ricamar-publish-switch' name='publish-switch' type='checkbox'>
+                  <label class='onoffswitch-label' for='ricamar-publish-switch'>
+                    <div class='onoffswitch-inner'></div>
+                    <div class='onoffswitch-switch'></div>
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
