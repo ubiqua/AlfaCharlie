@@ -560,12 +560,51 @@ table.index
       span
         display: none
   
-  .label.sent
-    @extend .label-yellow
+.label.sent
+  @extend .label-yellow
 
-  .label.unsent
-    @extend .label-red
+.label.unsent
+  @extend .label-red
 
-  .label.verified
-    @extend .label-green
+.label.verified
+  @extend .label-green
 
+h1 span.label
+  font-size: 50%
+  display: inline
+
+table.order
+  th, td
+    text-align: right
+  .product
+    text-align: left
+    span
+      color: #666
+      display: block
+  tfoot
+    tr.subtotal td, tr.tax td
+      background-color: #f5f5f5
+    tr.total td
+      background-color: #FCF8E3
+      border-color: #FBEED5
+    
+
+//Product Show
+.brand, .photos, .packages
+  margin-bottom: 25px
+
+.photos 
+  .btns
+    text-align: right
+  img
+    padding-right: 10px
+    cursor: pointer
+
+.packages 
+  .col-1-2:first-of-type
+    padding-right: 7.5px
+  .col-1-2:last-of-type
+    padding-left: 7.5px
+  table tr td:last-of-type
+    font-weight: bold
+    text-align: right

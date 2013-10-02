@@ -9,41 +9,53 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'orders.html'} Pedidos
         %li
-          %a{href:'/clients'} Clientes
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'} Marcas 
+          %a{href:'brands.html'} Marcas 
         %li
-          %a{href:'/products'} Productos
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Pedido #78334
-        %a Reenviar
-        %a Reenviar con otro ID
-        %a Borrar
-        %span Enviado
-        %span Fecha: 25/08/2013
-        %span Vendedor: Jorge Garcia
-        %span Cliente: Farmacia El Javillo
-        %table
+        .heading
+          %h1 
+            Pedido #78334
+            %span.label.sent Enviado
+          .actions
+            %a.btn Reenviar
+            %a.btn Reenviar con otro ID
+            %a.btn-danger Borrar
+          %span 
+            Fecha: 
+            %strong 25/08/2013
+          %span 
+            Vendedor: 
+            %strong 
+              %a{href:'jorge.html'} Jorge Garcia
+          %span 
+            Cliente: 
+            %strong
+              %a{href:'javillo.html'} Farmacia El Javillo
+        %table.index.order
           %thead
             %tr
-              %th Producto
+              %th.product Producto
               %th Precio Unitario
               %th Cantidad
               %th Total
           %tbody
             %tr
-              %td
-                Gatorade de Uva
+              %td.product
+                %a{href:'gatorade-uva.html'}
+                  Gatorade de Uva
                 %span Código: GTRD-15-234
                 %span Código de Barra: 09837539
                 %span Caja de 15 
@@ -51,8 +63,9 @@
               %td 2
               %td $30.90
             %tr
-              %td
-                Gatorade de Naranja
+              %td.product
+                %a{href:'#'}
+                  Gatorade de Naranja
                 %span Código: GTRD-15-239
                 %span Código de Barra: 09837540
                 %span Caja de 15 
@@ -60,15 +73,15 @@
               %td 2
               %td $30.90
           %tfoot
-            %tr
+            %tr.subtotal
               %td{colspan:'2'}
               %td Subtotal
               %td $61.80
-            %tr
+            %tr.tax
               %td{colspan:'2'}
               %td Impuestos
               %td $4.33
-            %tr
+            %tr.total
               %td{colspan:'2'}
               %td Total
               %td $66.13
