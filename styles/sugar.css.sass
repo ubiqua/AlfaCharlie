@@ -487,6 +487,27 @@ h1 .published
     .onoffswitch-switch
       right: 85px
 
+//Assigned Switch
+.assigned
+  @include device(desktop)
+    .onoffswitch
+      width: 110px
+
+    .onoffswitch-inner:before, .onoffswitch-inner:after
+      font-size: 10px 
+      text-transform: uppercase
+
+    .onoffswitch-inner:before
+      content: "Asignado"
+      padding-left: 15px
+      
+    .onoffswitch-inner:after
+      content: "No Asignado"
+      padding-right: 6px
+
+    .onoffswitch-switch
+      right: 85px
+
 //Indexes
 table.index
   margin-top: 10px
@@ -500,7 +521,7 @@ table.index
   td .db-ref
     color: #aaa
   
-  td.published, th.published
+  td.published, th.published, td.assigned, th.assigned
     text-align: right
     .onoffswitch
       float: right
