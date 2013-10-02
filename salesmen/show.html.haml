@@ -9,45 +9,72 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'orders.html'} Pedidos
         %li
-          %a{href:'/clients'} Clientes
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'} Marcas 
+          %a{href:'brands.html'} Marcas 
         %li
-          %a{href:'/products'} Productos
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Jorge Garcia
-        %a{href:'/salesmen/edit'} Editar
-        %a Borrar
-        %span Código: 7654321
-        %span Correo Electronico: jgarcia@ubiqua.me
-        %span Correo de Facturacion: facturador1@ubiqua.me
-        %span Última Actividad: 29/08/2013
-        %input{type: 'search', name: 'client-search', results: 5, placeholder: 'Busca un cliente'}
-        %table
+        .heading
+          %h1 
+            Jorge Garcia
+            .published
+              .onoffswitch
+                %input#jorge-publish-switch.onoffswitch-checkbox{checked: "checked", name: "jorge-switch", type: "checkbox"}
+                %label.onoffswitch-label{for: "gatorade-publish-switch"}
+                  .onoffswitch-inner
+                  .onoffswitch-switch
+          .actions
+            %a.btn{href:'/salesmen/edit'} Editar
+            %a.btn-danger{href: '#'} Borrar
+          %span 
+            Código: 
+            %strong 7654321
+          %span 
+            Correo Electronico: 
+            %strong jgarcia@ubiqua.me
+          %span 
+            Correo de Facturacion: 
+            %strong facturador1@ubiqua.me
+          %span 
+            Última Actividad: 
+            %strong 29/08/2013
+        %input{type: 'search', name: 'client-search', placeholder: 'Busca un cliente'}
+        %table.salesman.clients.index
           %thead
             %tr
-              %th Cliente(Código)
-              %th Asignado
+              %th.name Cliente (Código)
+              %th.assigned Asignado
           %tbody
             %tr
-              %td 
-                Farmacia El Javillo
-                %span (1234567)
-              %td
-                %a Quitar
+              %td.name
+                %a{href:"javillo.html"}
+                  Farmacia El Javillo
+                  %span.db-ref (1234567)
+              %td.assigned
+                .onoffswitch
+                  %input#javillo-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "javillo-assign-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
             %tr
-              %td 
-                Super 99
-                %span (1325476)
-              %td
-                %a Asignar
+              %td.name 
+                %a{href:"#"}
+                  Super 99
+                  %span.db-ref (1325476)
+              %td.assigned
+                .onoffswitch
+                  %input#super99-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "super99-assign-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch

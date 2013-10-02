@@ -456,10 +456,13 @@ table
   h1, .actions
     float: left
     @extend .col-1-2
+    @include clearfix
   h1
     margin: 5px 0px
   .actions
     text-align: right
+  span
+    display: block
 
 //Published Switch
 h1 .published
