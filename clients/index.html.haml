@@ -9,33 +9,63 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'orders.html'} Pedidos
+        %li.active
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/clients'} Clientes
-        %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'} Marcas 
+          %a{href:'brands.html'} Marcas 
         %li
-          %a{href:'/products'} Productos
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Clientes
-        %a{href:'/clients/new'} Crear Cliente
-        %input{type: 'search', name: 'client-search', results: 5, placeholder: 'Busca un cliente'}
-        %table
+        .heading
+          %h1 Clientes
+          .actions
+            %a.btn{href:'/clients/new'} Crear Cliente
+        %input{type: 'search', name: 'client-search', placeholder: 'Busca un cliente'}
+        %table.clients.index
           %thead
             %tr
-              %th Nombre(Código)
-              %th Publicado
+              %th.name Nombre (Código)
+              %th.published Publicado
           %tbody
             %tr
-              %td 
-                Farmacia El Javillo
-                %span (1234567)
-              %td &#x2713;
+              %td.name 
+                %a{href:"javillo.html"}
+                  Farmacia El Javillo
+                  %span.db-ref (1234567)
+              %td.published
+                .onoffswitch
+                  %input#javillo-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "javillo-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
+            %tr
+              %td.name 
+                %a{href:"#"}
+                  Supermercado El Rey
+                  %span.db-ref (7865831)
+              %td.published
+                .onoffswitch
+                  %input#rey-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "rey-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
+            %tr
+              %td.name 
+                %a{href:"#"}
+                  Importadora Ricamar
+                  %span.db-ref (6583107)
+              %td.published
+                .onoffswitch
+                  %input#ricamar-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "ricamar-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch

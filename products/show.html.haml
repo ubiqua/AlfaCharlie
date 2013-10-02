@@ -9,77 +9,93 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'orders.html'} Pedidos
         %li
-          %a{href:'/clients'} Clientes
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'} Marcas 
+          %a{href:'brands.html'} Marcas 
         %li
-          %a{href:'/products'} Productos
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Gatorade de Uva
-        %a{href:'/salesmen/edit'} Editar
-        %span Gatorade
-        %span Publicado
+        .heading
+          %h1 
+            Gatorade de Uva
+            .published
+              .onoffswitch
+                %input#gatorade-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                %label.onoffswitch-label{for: "gatorade-publish-switch"}
+                  .onoffswitch-inner
+                  .onoffswitch-switch
+          .actions
+            %a.btn{href:'/salesmen/edit'} Editar
+        .brand
+          %h2 Marca
+          %strong Gatorade
         .description
           %h2 Descripcion
           %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        .photos
-          %h2 Fotos
-          %a Agregar Foto
-          %img{src:'images/dummy.png'}
-          %img{src:'images/dummy.png'}
-          %img{src:'images/dummy.png'}
+        .photos.grid
+          %h2.col-1-2 Fotos
+          .col-1-2.btns
+            %a.btn{href:"#"} Agregar Foto
+          %img{src:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAEnElEQVR4Xu3X2ytscRyG8e+UcqOQU0IKF1JIyA1X/nBu5JRISDmXksipnE+736rRGIpnz96m0TO122XeaU3P+rTWmtzZ2dlr+LLANwvkBPPNUs6yAoIRAiogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLscVD+bx8THm5uaitrY2BgYGPpzR/f392N7ejqGhoWhoaMjePzk5ia2trbi/v8/+1tfXF1VVVd/S8NPH+9aX+sFRRYM5Pz+Pzc3NuL6+jubm5g9gLi4uYmlpKV5fX9/AJCQzMzNRV1cXLS0t2efb2tqit7f3y+w/fbwvv1AZBhUL5unpKaanp6O1tTWOj4+jsbHxHZiHh4eYn5+P6urquLq6egNzdHQU6+vrMTg4GE1NTbG4uBh3d3cxMTERe3t7sbOzE93d3dHR0RGzs7ORy+VibGws+/9fH68M57vkQ1YsmJeXl7i5uYmampqYmprKbi2Ft6Tl5eVIqDo7O2N1dfUNTB7FyMhIdpVZWVmJ09PTmJyczGKmz6UrU3ovXVHSLt3u/sfxEsJKe1UsmMLQxWAODg5id3c3hoeHM1Rra2vR39+fXVHSe+kq8hmYdALTLStdmdIVqqurK/tX/PqXxxNMGQoUn8B0m7m8vPzwTRKa5+fn2NjYeHdLSkjGx8ezfXoeWlhYyHYJWLp1fQWmlOOVIVdJh/yVV5iEJd2O0is9v6QrSk9PT/a8kx6A00NvfX39h4fehCSd/HR1SQ/Rh4eH2cNwe3v7u8jFQP/2eCWduTJ9+FeCKWyZnk/Sc0rxz+r0Uzs97Bb+rE6/mBKS/O0rXWlub29jdHQ0e1bKvz57Zsq/R45XpnNe0mF/BZiSCvhhVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiX4z8rrNemOx9CfwAAAABJRU5ErkJggg=='}
+          %img{src:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAEnElEQVR4Xu3X2ytscRyG8e+UcqOQU0IKF1JIyA1X/nBu5JRISDmXksipnE+736rRGIpnz96m0TO122XeaU3P+rTWmtzZ2dlr+LLANwvkBPPNUs6yAoIRAiogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLscVD+bx8THm5uaitrY2BgYGPpzR/f392N7ejqGhoWhoaMjePzk5ia2trbi/v8/+1tfXF1VVVd/S8NPH+9aX+sFRRYM5Pz+Pzc3NuL6+jubm5g9gLi4uYmlpKV5fX9/AJCQzMzNRV1cXLS0t2efb2tqit7f3y+w/fbwvv1AZBhUL5unpKaanp6O1tTWOj4+jsbHxHZiHh4eYn5+P6urquLq6egNzdHQU6+vrMTg4GE1NTbG4uBh3d3cxMTERe3t7sbOzE93d3dHR0RGzs7ORy+VibGws+/9fH68M57vkQ1YsmJeXl7i5uYmampqYmprKbi2Ft6Tl5eVIqDo7O2N1dfUNTB7FyMhIdpVZWVmJ09PTmJyczGKmz6UrU3ovXVHSLt3u/sfxEsJKe1UsmMLQxWAODg5id3c3hoeHM1Rra2vR39+fXVHSe+kq8hmYdALTLStdmdIVqqurK/tX/PqXxxNMGQoUn8B0m7m8vPzwTRKa5+fn2NjYeHdLSkjGx8ezfXoeWlhYyHYJWLp1fQWmlOOVIVdJh/yVV5iEJd2O0is9v6QrSk9PT/a8kx6A00NvfX39h4fehCSd/HR1SQ/Rh4eH2cNwe3v7u8jFQP/2eCWduTJ9+FeCKWyZnk/Sc0rxz+r0Uzs97Bb+rE6/mBKS/O0rXWlub29jdHQ0e1bKvz57Zsq/R45XpnNe0mF/BZiSCvhhVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiX4z8rrNemOx9CfwAAAABJRU5ErkJggg=='}
+          %img{src:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAEnElEQVR4Xu3X2ytscRyG8e+UcqOQU0IKF1JIyA1X/nBu5JRISDmXksipnE+736rRGIpnz96m0TO122XeaU3P+rTWmtzZ2dlr+LLANwvkBPPNUs6yAoIRAiogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLscVD+bx8THm5uaitrY2BgYGPpzR/f392N7ejqGhoWhoaMjePzk5ia2trbi/v8/+1tfXF1VVVd/S8NPH+9aX+sFRRYM5Pz+Pzc3NuL6+jubm5g9gLi4uYmlpKV5fX9/AJCQzMzNRV1cXLS0t2efb2tqit7f3y+w/fbwvv1AZBhUL5unpKaanp6O1tTWOj4+jsbHxHZiHh4eYn5+P6urquLq6egNzdHQU6+vrMTg4GE1NTbG4uBh3d3cxMTERe3t7sbOzE93d3dHR0RGzs7ORy+VibGws+/9fH68M57vkQ1YsmJeXl7i5uYmampqYmprKbi2Ft6Tl5eVIqDo7O2N1dfUNTB7FyMhIdpVZWVmJ09PTmJyczGKmz6UrU3ovXVHSLt3u/sfxEsJKe1UsmMLQxWAODg5id3c3hoeHM1Rra2vR39+fXVHSe+kq8hmYdALTLStdmdIVqqurK/tX/PqXxxNMGQoUn8B0m7m8vPzwTRKa5+fn2NjYeHdLSkjGx8ezfXoeWlhYyHYJWLp1fQWmlOOVIVdJh/yVV5iEJd2O0is9v6QrSk9PT/a8kx6A00NvfX39h4fehCSd/HR1SQ/Rh4eH2cNwe3v7u8jFQP/2eCWduTJ9+FeCKWyZnk/Sc0rxz+r0Uzs97Bb+rE6/mBKS/O0rXWlub29jdHQ0e1bKvz57Zsq/R45XpnNe0mF/BZiSCvhhVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiX4z8rrNemOx9CfwAAAABJRU5ErkJggg=='}
+          %img{src:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAEnElEQVR4Xu3X2ytscRyG8e+UcqOQU0IKF1JIyA1X/nBu5JRISDmXksipnE+736rRGIpnz96m0TO122XeaU3P+rTWmtzZ2dlr+LLANwvkBPPNUs6yAoIRAiogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLseC0QAqIBiUy7FgNIAKCAblciwYDaACgkG5HAtGA6iAYFAux4LRACogGJTLsWA0gAoIBuVyLBgNoAKCQbkcC0YDqIBgUC7HgtEAKiAYlMuxYDSACggG5XIsGA2gAoJBuRwLRgOogGBQLscVD+bx8THm5uaitrY2BgYGPpzR/f392N7ejqGhoWhoaMjePzk5ia2trbi/v8/+1tfXF1VVVd/S8NPH+9aX+sFRRYM5Pz+Pzc3NuL6+jubm5g9gLi4uYmlpKV5fX9/AJCQzMzNRV1cXLS0t2efb2tqit7f3y+w/fbwvv1AZBhUL5unpKaanp6O1tTWOj4+jsbHxHZiHh4eYn5+P6urquLq6egNzdHQU6+vrMTg4GE1NTbG4uBh3d3cxMTERe3t7sbOzE93d3dHR0RGzs7ORy+VibGws+/9fH68M57vkQ1YsmJeXl7i5uYmampqYmprKbi2Ft6Tl5eVIqDo7O2N1dfUNTB7FyMhIdpVZWVmJ09PTmJyczGKmz6UrU3ovXVHSLt3u/sfxEsJKe1UsmMLQxWAODg5id3c3hoeHM1Rra2vR39+fXVHSe+kq8hmYdALTLStdmdIVqqurK/tX/PqXxxNMGQoUn8B0m7m8vPzwTRKa5+fn2NjYeHdLSkjGx8ezfXoeWlhYyHYJWLp1fQWmlOOVIVdJh/yVV5iEJd2O0is9v6QrSk9PT/a8kx6A00NvfX39h4fehCSd/HR1SQ/Rh4eH2cNwe3v7u8jFQP/2eCWduTJ9+FeCKWyZnk/Sc0rxz+r0Uzs97Bb+rE6/mBKS/O0rXWlub29jdHQ0e1bKvz57Zsq/R45XpnNe0mF/BZiSCvhhVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiXY8FoABUQDMrlWDAaQAUEg3I5FowGUAHBoFyOBaMBVEAwKJdjwWgAFRAMyuVYMBpABQSDcjkWjAZQAcGgXI4FowFUQDAol2PBaAAVEAzK5VgwGkAFBINyORaMBlABwaBcjgWjAVRAMCiX4z8rrNemOx9CfwAAAABJRU5ErkJggg=='}
         .packages
-          %table
-            %thead
-              %tr
-                %th Caja de 15
-              %tr
-                %th GTRD-15-234
-            %tbody
-              %tr
-                %td Precio
-                %td $15.45
-              %tr
-                %td Código de Barra
-                %td 09837539
-              %tr
-                %td Inventario
-                %td 145
-              %tr
-                %td Bodega
-                %td WH-CF5
-              %tr
-                %td Tasa de Impuesto
-                %td 7%
-          %table
-            %thead
-              %tr
-                %th Unidad
-              %tr
-                %th GTRD-01-234
-            %tbody
-              %tr
-                %td Precio
-                %td $1.50
-              %tr
-                %td Código de Barra
-                %td 09737559
-              %tr
-                %td Inventario
-                %td 1175
-              %tr
-                %td Bodega
-                %td WH-CF6
-              %tr
-                %td Tasa de Impuesto
-                %td 7%
+          %h2 Packages
+          .grid
+            .col-1-2
+              %table.index.package
+                %thead
+                  %tr
+                    %th{colspan:'2'} 
+                      Caja de 15 
+                      %span.db-ref (GTRD-15-234)
+                %tbody
+                  %tr
+                    %td Precio
+                    %td $15.45
+                  %tr
+                    %td Código de Barra
+                    %td 09837539
+                  %tr
+                    %td Inventario
+                    %td 145
+                  %tr
+                    %td Bodega
+                    %td WH-CF5
+                  %tr
+                    %td Tasa de Impuesto
+                    %td 7%
+            .col-1-2
+              %table.index.package
+                %thead
+                  %tr
+                    %th{colspan:'2'}
+                      Unidad
+                      %span.db-ref (GTRD-01-234)
+                %tbody
+                  %tr
+                    %td Precio
+                    %td $1.50
+                  %tr
+                    %td Código de Barra
+                    %td 09737559
+                  %tr
+                    %td Inventario
+                    %td 1175
+                  %tr
+                    %td Bodega
+                    %td WH-CF6
+                  %tr
+                    %td Tasa de Impuesto
+                    %td 7%

@@ -27,54 +27,41 @@
       #main-content
         .heading
           %h1 
-            Jorge Garcia
+            Gatorade
             .published
               .onoffswitch
-                %input#jorge-publish-switch.onoffswitch-checkbox{checked: "checked", name: "jorge-switch", type: "checkbox"}
+                %input#gatorade-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
                 %label.onoffswitch-label{for: "gatorade-publish-switch"}
                   .onoffswitch-inner
                   .onoffswitch-switch
           .actions
-            %a.btn{href:'/salesmen/edit'} Editar
-            %a.btn-danger{href: '#'} Borrar
-          %span 
-            Código: 
-            %strong 7654321
-          %span 
-            Correo Electronico: 
-            %strong jgarcia@ubiqua.me
-          %span 
-            Correo de Facturacion: 
-            %strong facturador1@ubiqua.me
-          %span 
-            Última Actividad: 
-            %strong 29/08/2013
-        %input{type: 'search', name: 'client-search', placeholder: 'Busca un cliente'}
-        %table.salesman.clients.index
+            %a.btn{href:'/products/new'} Crear Producto
+        %input{type: 'search', name: 'product-search', placeholder: 'Busca un producto'}
+        %table.products.index
           %thead
             %tr
-              %th.name Cliente (Código)
-              %th.assigned Asignado
+              %th.name Nombre (Código)
+              %th.published Publicado
           %tbody
             %tr
               %td.name
-                %a{href:"javillo.html"}
-                  Farmacia El Javillo
-                  %span.db-ref (1234567)
-              %td.assigned
+                %a{href:"#"}
+                  Gatorade de Fresa
+                  %span.db-ref (GTRD-545)
+              %td.published
                 .onoffswitch
-                  %input#javillo-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
-                  %label.onoffswitch-label{for: "javillo-assign-switch"}
+                  %input#gatorade-fresa-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "gatorade-fresa-publish-switch"}
                     .onoffswitch-inner
                     .onoffswitch-switch
             %tr
-              %td.name 
+              %td.name
                 %a{href:"#"}
-                  Super 99
-                  %span.db-ref (1325476)
-              %td.assigned
+                  Gatorade de Uva
+                  %span.db-ref (GTRD-445)
+              %td.published
                 .onoffswitch
-                  %input#super99-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
-                  %label.onoffswitch-label{for: "super99-assign-switch"}
+                  %input#gatorade-uva-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "gatorade-uva-publish-switch"}
                     .onoffswitch-inner
                     .onoffswitch-switch

@@ -3,6 +3,8 @@
 $main-color: #f16b23
 $header-height: 75px
 $nav-width: 200px
+$phone-screen-width: 480px
+$tablet-screen-width: 768px
 
 // mixins
 
@@ -35,6 +37,17 @@ $nav-width: 200px
     content: ""
     display: table
 
+@mixin device($device)
+  @if $device == tablet
+    @media (max-width: $tablet-screen-width)
+      @content
+  @else if $device == phone
+    @media (max-width: $phone-screen-width)
+      @content
+  @else if $device == desktop
+    @media (min-width: $tablet-screen-width)
+      @content
+
 //Base Styles
 
 *, *:after, *:before
@@ -43,10 +56,12 @@ $nav-width: 200px
   box-sizing: border-box
 
 body
-  color: #333
+  color: #444
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  font-size: 14px
-  line-height: 20px
+  font-size: 16px
+  line-height: 1.5
+  @include device(phone)
+    font-size: 14px
 
 //Structure
 
@@ -61,23 +76,48 @@ body
 
 header
   height: $header-height
-
-nav
+#main-nav
   float: left
   height: 100%
   width: $nav-width
   
 #main-container
-  background-color: #fcfcfc
   height: 100%
   padding-left: $nav-width
   padding-bottom: $header-height
   width: 100%
+  transition: padding-left ease-in-out 0.3s
+  -webkit-transition: padding-left ease-in-out 0.3s
+  -moz-transition: padding-left ease-in-out 0.3s
 
 #main-content
   height: 100%
   overflow: auto
-  @include ubiqua-scrollbar
+  transition: margin-right ease-in-out 0.3s
+  -webkit-transition: margin-right ease-in-out 0.3s
+  -moz-transition: margin-right ease-in-out 0.3s
+
+//Grid
+[class*='col-']
+  float: left
+
+.col-1-4
+  width: 25%
+
+.col-1-3
+  width: 33.33% 
+
+.col-1-2
+  width: 50%
+
+.col-2-3
+  width: 66.66%
+
+.col-3-4
+  width: 75%
+
+.grid
+  @include clearfix
 
 //Navigation
 
@@ -88,9 +128,12 @@ header
     height: 100%
     padding: 15px 10px
 
-nav 
+#main-nav 
   background-color: #fff
   border-right: 1px solid #eee 
+  transition: width ease-in-out 0.3s
+  -webkit-transition: width ease-in-out 0.3s
+  -moz-transition: width ease-in-out 0.3s
   ul
     list-style: none
     margin: 0
@@ -105,6 +148,9 @@ nav
     font-weight: bold
     padding: 20px 15px
     text-decoration: none
+    transition: background linear 0.15s, border linear 0.15s, color linear 0.15s
+    -webkit-transition: background linear 0.15s, border linear 0.15s, color linear 0.15s
+    -moz-transition: background linear 0.15s, border linear 0.15s, color linear 0.15s
     &:hover
       background-color: #f8f8f8
       color: #555
@@ -112,3 +158,453 @@ nav
     background-color: #f8f8f8
     border-left: 5px solid $main-color
     color: #f16b23
+
+@include device(tablet)
+  #main-nav
+    overflow: hidden
+    width: 0
+
+  #main-nav.open
+    width: 200px
+
+  #main-container
+    padding-left: 0
+
+  #main-nav.open + #main-container
+    padding-left: 200px
+  
+  #main-nav.open + #main-container #main-content
+    margin-right: -200px 
+
+//Content
+
+#main-container
+  background-color: #fdfdfd
+
+#main-content
+  padding: 15px
+  @include ubiqua-scrollbar
+
+//Titles
+h1, h2, h3, h4, h5, h6
+  font-weight: 500
+  line-height: 1
+  margin: 0
+
+//Link
+a
+  color: $main-color
+  text-decoration: none
+  transition: color linear 0.05s
+  -webkit-transition: color linear 0.05s
+  -moz-transition: color linear 0.05s
+  &:hover
+    color: $main-color
+
+//Inputs
+input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="text"], input[type="url"], input[type="search"]
+  background-color: #FFF
+  border: 1px solid #CCC
+  border-radius: 2px
+  color: #555
+  display: block
+  font-size: 16px
+  line-height: 20px
+  padding: 10px 16px
+  transition: border-color ease-in-out 0.15s
+  -webkit-transition: border-color ease-in-out 0.15s
+  -moz-transition: border-color ease-in-out 0.15s
+  vertical-align: middle
+  width: 100%
+  &:focus
+    border-color: $main-color
+    outline: 0
+
+input[type="search"]
+  @extend input[type="text"]
+  background: url('../images/icon-search.png') #fff no-repeat 5px
+  padding-left: 30px
+
+::-webkit-search-cancel-button
+  -webkit-appearance: none
+  margin: 0
+  &:after
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC)
+    background-repeat: no-repeat 
+    background-size: 10px  
+    background-position: top left
+    background-position-y: 1px
+    content: ''
+    display: block
+    height: 10px
+    width: 10px
+
+textarea
+  @extend input[type="text"]
+  height: auto
+
+//Buttons
+
+.btn
+  background-color: #f4f4f4
+  border: 1px solid #dfdfdf
+  border-radius: 2px
+  color: #555
+  cursor: pointer
+  display: inline-block
+  font-size: 16px
+  font-weight: normal
+  margin-bottom: 0
+  padding: 10px 16px
+  text-align: center
+  text-decoration: none 
+  transition: background linear 0.15s, border linear 0.15s, color linear 0.15s
+  -webkit-transition: background linear 0.15s, border linear 0.15s, color linear 0.15s
+  -moz-transition: background linear 0.15s, border linear 0.15s, color linear 0.15s
+  user-select: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  vertical-align: middle
+  white-space: nowrap
+  &:hover
+    background-color: #efefef
+    border-color: #ccc
+    color: #444
+
+.btn-primary
+  @extend .btn
+  background-color: #f48c40
+  border-color: #ea8131
+  color: white
+  &:hover
+    background-color: #f16b23
+    border-color: #E95307 
+    color: white
+
+.btn-danger
+  @extend .btn
+  background-color: #D9534F
+  border-color: #D43F3A
+  color: white
+  &:hover
+    background-color: #D2322D
+    border-color: #AC2925 
+    color: white
+
+//Tables
+@mixin table-striped
+  & tbody tr:nth-child(odd) > td, & tbody tr:nth-child(odd) > th
+    background-color: #f9f9f9
+
+@mixin table-hover
+  td, th
+    transition: background linear 0.05s
+    -webkit-transition: background linear 0.05s
+    -moz-transition: background linear 0.05s
+
+  & tbody > tr:hover > td, & tbody > tr:hover > th 
+    background-color: #F5F5F5
+  
+table
+  border-collapse: collapse
+  border-spacing: 0
+  max-width: 100%
+  width: 100%
+
+  td, th
+    border-top: 1px solid #DDD
+    line-height: 2
+    padding: 10px 8px
+    text-align: left
+    vertical-align: top
+    @include device(phone)
+      padding: 8px 5px
+
+  th
+    border-bottom: 2px solid #DDD
+    font-size: 14px
+    text-transform: uppercase
+    vertical-align: bottom
+    @include device(phone)
+      font-size: 12px
+
+  thead:first-child tr:first-child th
+    border-top: 0
+
+//Labels
+.label
+  background-color: #efefef
+  border-radius: 2px
+  color: #444
+  display: inline
+  font-size: 75%
+  font-weight: bold
+  line-height: 1
+  padding: .2em .6em .3em
+  text-align: center
+  white-space: nowrap
+  vertical-align: baseline
+
+.label-green
+  @extend .label
+  background-color: #5CB85C 
+  color: #FFF
+
+.label-red
+  @extend .label
+  background-color: #D9534F 
+  color: #FFF
+
+.label-yellow
+  @extend .label
+  background-color: #F0AD4E 
+  color: #FFF
+
+// ON/OFF Switch
+.onoffswitch
+  position: relative
+  width: 60px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+
+.onoffswitch-checkbox
+  display: none
+
+.onoffswitch-label
+  display: block
+  overflow: hidden
+  cursor: pointer
+  border: 1px solid #DFDFDF
+  border-radius: 2px
+
+.onoffswitch-inner
+  width: 200%
+  margin-left: -100%
+  -moz-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  -webkit-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  -o-transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  transition: margin 0.3s ease-in 0s, background linear 0.15s, border linear 0.15s
+  &:before, &:after
+    float: left
+    width: 50%
+    height: 30px
+    padding: 0
+    line-height: 30px
+    font-size: 19px
+    color: #fff
+    font-weight: bold
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+    -moz-transition: background linear 0.15s, border linear 0.15s
+    -webkit-transition: background linear 0.15s, border linear 0.15s
+    -o-transition: background linear 0.15s, border linear 0.15s
+    transition: background linear 0.15s, border linear 0.15s
+  &:before
+    content: "✓"
+    padding-left: 10px
+    background-color: #5CB85C
+    color: #FFFFFF
+  &:after
+    content: "×"
+    padding-right: 11px
+    background-color: #D9534F
+    color: #FFFFFF
+    text-align: right
+
+.onoffswitch-switch
+  width: 25px
+  margin: 0px
+  background: #f4f4f4
+  border: 1px solid #DFDFDF
+  border-radius: 2px
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 35px
+  -moz-transition: all 0.3s ease-in 0s
+  -webkit-transition: all 0.3s ease-in 0s
+  -o-transition: all 0.3s ease-in 0s
+  transition: all 0.3s ease-in 0s
+
+.onoffswitch:hover
+  .onoffwitch-label
+    border-color: #ccc
+  .onoffswitch-switch
+    background-color: #efefef
+    border-color: #ccc
+  .onoffswitch-inner
+    &:before
+      background-color: #47A447
+    &:after
+      background-color: #D2322D
+
+.onoffswitch-checkbox:checked + .onoffswitch-label
+  .onoffswitch-inner
+    margin-left: 0
+  .onoffswitch-switch
+    right: 0px
+
+//View headings
+.heading
+  margin-bottom: 20px
+  @extend .grid
+  @include clearfix
+  h1, .actions
+    float: left
+    @extend .col-1-2
+    @include clearfix
+  h1
+    margin: 5px 0px
+  .actions
+    text-align: right
+  span
+    display: block
+
+//Published Switch
+h1 .published
+  display: inline-block
+  margin-bottom: -5px
+  margin-left: 5px
+
+.published
+  @include device(desktop)
+    .onoffswitch
+      width: 110px
+
+    .onoffswitch-inner:before, .onoffswitch-inner:after
+      font-size: 10px 
+      text-transform: uppercase
+
+    .onoffswitch-inner:before
+      content: "Publicado"
+      padding-left: 12px
+      
+    .onoffswitch-inner:after
+      content: "No Publicado"
+      padding-right: 4px
+
+    .onoffswitch-switch
+      right: 85px
+
+//Assigned Switch
+.assigned
+  @include device(desktop)
+    .onoffswitch
+      width: 110px
+
+    .onoffswitch-inner:before, .onoffswitch-inner:after
+      font-size: 10px 
+      text-transform: uppercase
+
+    .onoffswitch-inner:before
+      content: "Asignado"
+      padding-left: 15px
+      
+    .onoffswitch-inner:after
+      content: "No Asignado"
+      padding-right: 6px
+
+    .onoffswitch-switch
+      right: 85px
+
+//Indexes
+table.index
+  margin-top: 10px
+  @include table-hover
+
+  td a
+    color: #666
+    &:hover
+      color: $main-color
+
+  td .db-ref
+    color: #aaa
+  
+  td.published, th.published, td.assigned, th.assigned
+    text-align: right
+    .onoffswitch
+      float: right
+      text-align: left
+
+//Orders
+.orders.index 
+  @include device(tablet)
+    th.order-number
+      &:after
+        content: "#"
+      span
+        display: none
+    td .db-ref
+      display: block
+
+  @include device(phone)
+    th.salesman, td.salesman
+      display: none
+
+    th.status
+      max-width: 72px
+      text-align: center
+
+    td.status
+      text-align: center
+
+    .label 
+      border-radius: 15px
+      display: inline-block
+      min-height: 15px
+      min-width: 15px
+      span
+        display: none
+  
+.label.sent
+  @extend .label-yellow
+
+.label.unsent
+  @extend .label-red
+
+.label.verified
+  @extend .label-green
+
+h1 span.label
+  font-size: 50%
+  display: inline
+
+table.order
+  th, td
+    text-align: right
+  .product
+    text-align: left
+    span
+      color: #666
+      display: block
+  tfoot
+    tr.subtotal td, tr.tax td
+      background-color: #f5f5f5
+    tr.total td
+      background-color: #FCF8E3
+      border-color: #FBEED5
+    
+
+//Product Show
+.brand, .photos, .packages
+  margin-bottom: 25px
+
+.photos 
+  .btns
+    text-align: right
+  img
+    padding-right: 10px
+    cursor: pointer
+
+.packages 
+  .col-1-2:first-of-type
+    padding-right: 7.5px
+  .col-1-2:last-of-type
+    padding-left: 7.5px
+  table tr td:last-of-type
+    font-weight: bold
+    text-align: right

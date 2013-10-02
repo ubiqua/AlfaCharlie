@@ -9,43 +9,63 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'orders.html'} Pedidos
         %li
-          %a{href:'/clients'} Clientes
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'} Marcas 
+          %a{href:'brands.html'} Marcas 
         %li
-          %a{href:'/products'} Productos
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Farmacia El Javillo
-        %a{href:'/clients/edit'} Editar
-        %a Borrar
-        %span Código: 1234567
-        %span Publicado
-        %input{type: 'search', name: 'salesman-search', results: 5, placeholder: 'Busca un vendedor'}
-        %table
+        .heading
+          %h1 
+            Farmacia El Javillo
+            .published
+              .onoffswitch
+                %input#gatorade-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                %label.onoffswitch-label{for: "gatorade-publish-switch"}
+                  .onoffswitch-inner
+                  .onoffswitch-switch
+          .actions
+            %a.btn{href:'/clients/edit'} Editar
+            %a.btn-danger{href: '#'} Borrar
+          %span 
+            Código: 
+            %strong 1234567
+        %input{type: 'search', name: 'salesman-search', placeholder: 'Busca un vendedor'}
+        %table.salesmen.index
           %thead
             %tr
-              %th Vendedor(Código)
-              %th Asignado
+              %th.name Vendedor (Código)
+              %th.assigned Asignado
           %tbody
             %tr
-              %td 
-                Jorge Garcia
-                %span (7654321)
-              %td
-                %a Quitar
+              %td.name
+                %a{href:'jorge.html'}
+                  Jorge Garcia
+                  %span.db-ref (7654321)
+              %td.assigned
+                .onoffswitch
+                  %input#jorge-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "jorge-assign-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
             %tr
-              %td 
-                Jose Varela
-                %span (7456312)
-              %td
-                %a Asignar
+              %td.name 
+                %a{href:''}
+                  Jose Varela
+                  %span.db-ref (7456312)
+              %td.assigned
+                .onoffswitch
+                  %input#jose-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "jose-assign-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch

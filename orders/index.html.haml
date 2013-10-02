@@ -9,40 +9,92 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
+        %li.active
+          %a{href:'orders.html'} Pedidos
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/clients'} Clientes
-        %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'} Marcas 
+          %a{href:'brands.html'} Marcas 
         %li
-          %a{href:'/products'} Productos
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Pedidos
-        %input{type: 'search', name: 'order-search', results: 5, placeholder: 'Busca un pedido'}
-        %table
+        .heading
+          %h1 Pedidos
+        %input{type: 'search', name: 'order-search', placeholder: 'Busca un pedido'}
+        %table.orders.index
           %thead
             %tr
-              %th Número de Pedido
-              %th Cliente
-              %th Vendedor
-              %th Fecha
-              %th Status
+              %th.order-number 
+                %span Número de Pedido
+              %th.client Cliente
+              %th.salesman Vendedor
+              %th.date Fecha
+              %th.status Status
           %tbody
             %tr
-              %td 78334
               %td
-                Farmacia El Javillo
-                %span (1234567)
-              %td
-                Jorge Garcia
-                %span (7654321)
+                %a{href:"order.html"} 78334
+              %td.client
+                %a{href:"#"}
+                  Farmacia El Javillo
+                  %span.db-ref (1234567)
+              %td.salesman
+                %a{href:"#"} 
+                  Jorge Garcia
+                  %span.db-ref (7654321)
               %td 25/08/2013
-              %td Confirmado
+              %td.status 
+                .label.sent
+                  %span Enviado
+            %tr
+              %td
+                %a{href:"#"} 78333
+              %td.client
+                %a{href:"#"}
+                  Supermercado El Rey
+                  %span.db-ref (7865831)
+              %td.salesman
+                %a{href:"#"} 
+                  Jose Varela
+                  %span.db-ref (6538821)
+              %td 25/08/2013
+              %td.status
+                .label.verified
+                  %span Confirmado
+            %tr
+              %td 
+                %a{href:"#"} 78332
+              %td.client
+                %a{href:"#"}
+                  Importadora Ricamar
+                  %span.db-ref (6583107)
+              %td.salesman
+                %a{href:"#"} 
+                  Diego Molino
+                  %span.db-ref (6998821)
+              %td 25/08/2013
+              %td.status
+                .label.unsent
+                  %span No Enviado
+            %tr
+              %td 
+                %a{href:"#"} 78331
+              %td.client
+                %a{href:"#"}
+                  Farmacia El Javillo
+                  %span.db-ref (1234567)
+              %td.salesman
+                %a{href:"#"} 
+                  Jorge Garcia
+                  %span.db-ref (7654321)
+              %td 25/08/2013
+              %td.status
+                .label.verified
+                  %span Confirmado

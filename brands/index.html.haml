@@ -9,31 +9,57 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'orders.html'} Pedidos
         %li
-          %a{href:'/clients'} Clientes
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
+        %li.active
+          %a{href:'brands.html'} Marcas 
         %li
-          %a{href:'/brands'} Marcas 
-        %li
-          %a{href:'/products'} Productos
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Marcas
-        %a{href:'/brands/new'} Crear Marca
-        %input{type: 'search', name: 'brand-search', results: 5, placeholder: 'Busca una marca'}
-        %table
+        .heading
+          %h1 Marcas
+          .actions
+            %a.btn{href:'/brands/new'} Crear Marca
+        %input{type: 'search', name: 'brand-search', placeholder: 'Busca una marca'}
+        %table.brands.index
           %thead
             %tr
-              %th Marca
-              %th Publicada
+              %th.name Marca
+              %th.published Publicada
           %tbody
             %tr
-              %td Gatorade
-              %td &#x2713;
+              %td.name 
+                %a{href: "gatorade.html"} Gatorade
+              %td.published
+                .onoffswitch
+                  %input#gatorade-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "gatorade-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
+            %tr
+              %td.name 
+                %a{href: "#"} Coca Cola
+              %td.published
+                .onoffswitch
+                  %input#coca-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "coca-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
+            %tr
+              %td.name
+                %a{href: "#"} Tropicana
+              %td.published
+                .onoffswitch
+                  %input#tropicana-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "tropicana-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch

@@ -9,33 +9,52 @@
   %body
     %header
       %img.logo{src:'images/ubiqua-logo.png', alt: 'ubiqua'}
-    %nav
+    %nav#main-nav
       %ul
         %li
-          %a{href:'/orders'} Pedidos
+          %a{href:'orders.html'} Pedidos
         %li
-          %a{href:'/clients'} Clientes
+          %a{href:'clients.html'} Clientes
         %li
-          %a{href:'/salesmen'} Vendedores
+          %a{href:'salesmen.html'} Vendedores
         %li
           %a{href:'/supervisors'} Supervisores
         %li
-          %a{href:'/brands'} Marcas 
-        %li
-          %a{href:'/products'} Productos
+          %a{href:'brands.html'} Marcas 
+        %li.active
+          %a{href:'products.html'} Productos
     #main-container
       #main-content
-        %h1 Productos
-        %a{href:'/products/new'} Crear Producto
-        %input{type: 'search', name: 'product-search', results: 5, placeholder: 'Busca un producto'}
-        %table
+        .heading
+          %h1 Productos
+          .actions
+            %a.btn{href:'/products/new'} Crear Producto
+        %input{type: 'search', name: 'product-search', placeholder: 'Busca un producto'}
+        %table.products.index
           %thead
             %tr
-              %th Nombre(Código)
-              %th Publicado
+              %th.name Nombre(Código)
+              %th.published Publicado
           %tbody
             %tr
-              %td 
-                Gatorade de Uva
-                %span (GTRD-445)
-              %td &#x2713;
+              %td.name
+                %a{href:"gatorade-uva.html"}
+                  Gatorade de Fresa
+                  %span.db-ref (GTRD-545)
+              %td.published
+                .onoffswitch
+                  %input#gatorade-fresa-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "gatorade-fresa-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
+            %tr
+              %td.name
+                %a{href:"gatorade-uva.html"}
+                  Gatorade de Uva
+                  %span.db-ref (GTRD-445)
+              %td.published
+                .onoffswitch
+                  %input#gatorade-uva-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
+                  %label.onoffswitch-label{for: "gatorade-uva-publish-switch"}
+                    .onoffswitch-inner
+                    .onoffswitch-switch
