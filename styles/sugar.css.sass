@@ -521,8 +521,15 @@ table.index
     &:hover
       color: $main-color
 
-  td .db-ref
+  span.db-ref
     color: #aaa
+    display: none
+
+  @include device(tablet)
+    th.db-ref, td.db-ref
+      display: none
+    span.db-ref
+      display: inline
   
   td.published, th.published, td.assigned, th.assigned
     text-align: right
@@ -600,11 +607,14 @@ table.order
     padding-right: 10px
     cursor: pointer
 
-.packages 
+.packages
   .col-1-2:first-of-type
     padding-right: 7.5px
   .col-1-2:last-of-type
     padding-left: 7.5px
-  table tr td:last-of-type
-    font-weight: bold
-    text-align: right
+  table 
+    th span.db-ref
+      display: inline
+    tr td:last-of-type
+      font-weight: bold
+      text-align: right

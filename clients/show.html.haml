@@ -44,7 +44,10 @@
         %table.salesmen.index
           %thead
             %tr
-              %th.name Vendedor (Código)
+              %th.name 
+                Vendedor 
+                %span.db-ref (Código)
+              %th.db-ref Código
               %th.assigned Asignado
           %tbody
             %tr
@@ -52,6 +55,7 @@
                 %a{href:'jorge.html'}
                   Jorge Garcia
                   %span.db-ref (7654321)
+              %td.db-ref 7654321
               %td.assigned
                 .onoffswitch
                   %input#jorge-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
@@ -63,6 +67,7 @@
                 %a{href:''}
                   Jose Varela
                   %span.db-ref (7456312)
+              %td.db-ref 7456312
               %td.assigned
                 .onoffswitch
                   %input#jose-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}

@@ -53,7 +53,10 @@
         %table.salesman.clients.index
           %thead
             %tr
-              %th.name Cliente (Código)
+              %th.name 
+                Cliente 
+                %span.db-ref (Código)
+              %th.db-ref Código
               %th.assigned Asignado
           %tbody
             %tr
@@ -61,6 +64,7 @@
                 %a{href:"javillo.html"}
                   Farmacia El Javillo
                   %span.db-ref (1234567)
+              %td.db-ref 1234567
               %td.assigned
                 .onoffswitch
                   %input#javillo-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}
@@ -72,6 +76,7 @@
                 %a{href:"#"}
                   Super 99
                   %span.db-ref (1325476)
+              %td.db-ref 1325476
               %td.assigned
                 .onoffswitch
                   %input#super99-assign-switch.onoffswitch-checkbox{checked: "checked", name: "assign-switch", type: "checkbox"}

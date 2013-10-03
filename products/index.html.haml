@@ -33,7 +33,10 @@
         %table.products.index
           %thead
             %tr
-              %th.name Nombre(Código)
+              %th.name 
+                Nombre
+                %span.db-ref (Código)
+              %th.db-ref Código
               %th.published Publicado
           %tbody
             %tr
@@ -41,6 +44,7 @@
                 %a{href:"gatorade-uva.html"}
                   Gatorade de Fresa
                   %span.db-ref (GTRD-545)
+              %td.db-ref GTRD-545
               %td.published
                 .onoffswitch
                   %input#gatorade-fresa-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
@@ -52,6 +56,7 @@
                 %a{href:"gatorade-uva.html"}
                   Gatorade de Uva
                   %span.db-ref (GTRD-445)
+              %td.db-ref GTRD-445
               %td.published
                 .onoffswitch
                   %input#gatorade-uva-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}

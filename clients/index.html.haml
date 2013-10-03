@@ -33,7 +33,10 @@
         %table.clients.index
           %thead
             %tr
-              %th.name Nombre (Código)
+              %th.name 
+                Nombre 
+                %span.db-ref (Código)
+              %th.db-ref Código
               %th.published Publicado
           %tbody
             %tr
@@ -41,6 +44,7 @@
                 %a{href:"javillo.html"}
                   Farmacia El Javillo
                   %span.db-ref (1234567)
+              %td.db-ref 1234567
               %td.published
                 .onoffswitch
                   %input#javillo-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
@@ -52,6 +56,7 @@
                 %a{href:"#"}
                   Supermercado El Rey
                   %span.db-ref (7865831)
+              %td.db-ref 7865831
               %td.published
                 .onoffswitch
                   %input#rey-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
@@ -63,6 +68,7 @@
                 %a{href:"#"}
                   Importadora Ricamar
                   %span.db-ref (6583107)
+              %td.db-ref 6583107
               %td.published
                 .onoffswitch
                   %input#ricamar-publish-switch.onoffswitch-checkbox{checked: "checked", name: "publish-switch", type: "checkbox"}
